@@ -1,7 +1,6 @@
 # Aligarh-Muslim-University-VLAB
 <p align="center">
-  <img width="460" height="300" src="http://www.fillmurray.com/460/300"> 
-  <img src="./images/AMU_logo.png" /></div>  
+ <p>AMU LOGO Here</p>
 
 </p>
 
