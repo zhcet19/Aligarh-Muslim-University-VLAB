@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DrawIt</title>
+    <script type='text/javascript' src='http://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.4.0/fabric.min.js'></script>
+    <style type='text/css'>
+        #sheet {
+            border:1px solid black;
+        }
+    </style>
+    <script type='text/javascript'>
+        window.onload=function(){
+            var canvas = new fabric.Canvas('sheet');
+            canvas.isDrawingMode = true;
+            canvas.freeDrawingBrush.width = 5;
+            canvas.freeDrawingBrush.color = "";
+        }
+    </script>
+  </head>
+  <body>
+    <canvas id="sheet"></canvas>
+  </body>
+</html>
