@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html>
     <!-- some scripts -->
-    <title>AMU-VLABS</title>
+    <title>Basic Electronics</title>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- google font -->
 
-        
+        <!-- cdn -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="./stylesheets/loader.css">
+
         <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
         
-        <!-- <link rel="stylesheet" href="/bootstrap-5.0.0-beta1-dist/css/bootstrap.css"> -->
-        <!-- <script src="/bootstrap-5.0.0-beta1-dist/js/bootstrap.js"></script> -->
-        <link href="./stylesheets/app.css" rel="stylesheet">
+        <link href="./stylesheets/app.css" rel="stylesheet">   
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jsPlumb/2.15.6/js/jsplumb.js"></script>
+        <script src="./Js/demo.js"></script>
+                  
+        <link rel="stylesheet" href="./stylesheets/demo.css">     
     </head>
 
   <body>
-        <div class=" content container-fluid ">
-          <img align="right" src="./images/AMU_logo.png" alt="">         
+    <!-- nav bar -->
+        <div class="container-fluid content col-8 ">
+        <img align="right" src="./images/AMU_logo.png" alt="">         
           <a href="https://www.amu.ac.in"> </a> 
                 <!-- nav bar -->
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                   <div class="container-fluid">
                     <a class="navbar-brand" href="#">
-                      <img src="./images/AMU.png" alt=/>
+                      <img src="./images/AMU.png" alt=""/>
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                       <span style="color:black" class="navbar-toggler-icon">
@@ -38,131 +43,158 @@
                           <a class="nav-link " aria-current="page" href="/"> <b>HOME</b></a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link active" href="/experiment1" data-toggle="tooltip" data-placement="top" title="Currently here" > <b>LABS </b></a>
+                          <a class="nav-link active" href="/experiment" data-toggle="tooltip" data-placement="top" title="Currently here" > <b>LABS </b></a>
                         </li>
                       </ul>
                     </div>
                   </div>
                 </nav>
-          </div>
+                <div class="container pb-lg-1">
+                    <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/experiment">Labs</a></li>
+                        <li class="breadcrumb-item " aria-current="page">VI Characteristics of a Diode</li>
+                        <li class="breadcrumb-item active" aria-current="page">Forward Bias</li>
+                      </ol>
+                    </nav>
+             </div>
 
-        <nav class="navbar navbar-expand-lg col-5 container-fluid mt-3" style="color: rgb(248, 247, 247); background-color:rgb(165, 47, 53);; padding-left:90 ;">
-          <div class="container-fluid" color="white">
-            <a class="navbar-brand" href="#" style="color: rgb(255, 255, 255);" data-toggle="tooltip" data-placement="top" title="Current"><b>LABS</b> </a>
-            <button class="navbar-toggler"  id="expand" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon">
-                <p class="expanded"style="font-size:30px" > +</p>
-              </span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" class="tooltip"  data-toggle="tooltip" data-placement="bottom" title="THIS SITE WORKS BEST WITH PC BROWSERS. MAKE SURE FOR AFFECTIVE SIMULATION OPT FOR LATEST FIREFOX OR CHROM PC BROWSERS" href="#"  style="color: rgb(255, 255, 255);"> 
-                     INTRODUCTION
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" data-toggle="tooltip" data-placement="bottom" title="Select course" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"  style="color: rgb(255, 255, 255);">
-                    COURSES
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">ELA</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">COC</a></li>
-                  </ul>
-                  </li>
+            <!-- main body -->
+            <div >
+              <h5>  VI Characteristics Of a Diode <span class="instruct" style="color: rgb(154, 154, 163);">| Forward Bias</span> </h5>
             </div>
-          </div>
-        </nav>
-      </div> 
+            <div style="background-color: blue; visibility: hidden;">
+              <p>Some ransom text</p>
+            </div>
+            </div>            
+        <div class="container-lg">
+          <div class="row">
+            <div class="col-6 pt-5">
 
-        <div class="container col-10 pt-5">
-          <div class ="ela">
-            <table class="col-8 container-fluid">    
-                <tr>
-                  
-                  <th>BASIC ELECTORINCS </th>
-                  
-                </tr>        
+              <!-- Will contain all the jsplumb stuff -->
+              <!-- <img src="../images/diode_frwd.png" alt="" > -->
+                <img src="./images/diode_frwd.png" alt="" >
+                <div class="jtk-demo-main">
+                 <!-- demo -->
+                <div class="jtk-demo-canvas canvas-wide animation-demo jtk-surface jtk-surface-nopan" id="canvas">
                 
-                <tr>
-                    <td> <a href="./exp1.html" style="color: black; text-decoration: none;">1. VI Characteristics of a Diode </a> </td>
-                </tr>
+                   <div class="bigdot" id="bd1"></div>
+                   <div class="bigdot" id="bd2"></div>
+                   <div class="bigdot" id="bd3"></div>
+                   <div class="bigdot" id="bd4"></div>
+                   <div class="bigdot" id="bd5"></div>
+                   <div class="bigdot" id="bd6"></div>
+                   <div class="bigdot" id="bd7"></div>
+                   <div class="bigdot" id="bd8"></div>
+   
+               </div>
+               <!-- /demo -->
+               <!-- explanation -->
+               <!-- /explanation -->
+           </div>
+          
+           <!-- JS -->
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/jsPlumb/2.15.6/js/jsplumb.js"></script>
+   
+           <script src="./Js/demo.js"></script>
+           
+               <!-- /demo -->
+               <!-- explanation -->
+               <!-- /explanation -->
+                         
+              <!--  ------------------------------------------ -->
 
-                <tr>
-                  <td> <a href="./exp1.html" style="color: black; text-decoration: none;">2. Half Wave Rectification </a></td>
-                 
-                </tr>
-                <tr>
-                  <td>
-                    <a href="./exp1.html" style="color: black; text-decoration: none;">
-                    3. Full Wave Rectification
-                    </a>
-                  </td>
+            <div class="col-5" style="visibility: hidden;">This is a rubbus</div>
+              <select id="diode_type">
+                <option value="choose" selected="">Choose Diode</option> 
+                <option value="0.6">1N4001</option>                                  
+                <option value="0.6">1N4004</option>
+                <option value="0.6">1N4007</option>
+                <option value="0.5">1N4148</option>
+                <option value="0.62">1N4448</option>
+                <option value="0.6">1N5408</option>
+              </select>
+
+              <input type="text" value="" id="diodevalue" placeholder="Diode Value" style="background-color:#f0eaea;" readonly="">
+              <div class="col-5" style="visibility: hidden;">This is a rubbus</div>
+                <span>DC VOLTS:   &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</span>
                 
-                </tr>
-                <tr>
-                  <td> <a href="./exp1.html" style="color: black; text-decoration: none;"> 4. Capacitative Rectification </a></td>
-                </tr>
-                <tr>
-                  <td> <a href="./exp1.html" style="color: black; text-decoration: none;">5. Zener Diode-Voltage Regulator </a> </td>
-                </tr>
-                <tr>
-                    <td> <a href="./exp1.html" style="color: black; text-decoration: none;"> 6. BJT Common Emitter Characteristics**</a> </td>
-                </tr>
-                <tr>
-                  <td>
-                    <a href="./exp1.html" style="color: black; text-decoration: none;">7. BJT Common Base Characteristics** </a></td>
-                </tr>
-                <tr>
-                  <td>
-                    <a href="./exp1.html" style="color: black; text-decoration: none;">8. Studies on BJT CE Amplifier </a></td>
-                </tr>
-                <tr>
-                  <td> <a href="./exp1.html" style="color: black; text-decoration: none;">9. RC Frequency Response</a></td>
-                </tr>
+                <input type="range" min="0" max="5" step="0.1" value="0" id="dc">
+                <p>Value: <span id="dc-value"></span></p>
+
+                <span>RESISTANCE:  &nbsp; &nbsp;</span>
                 
-            </table>
-          </div>
-
-
-          <div class ="coc pt-5" style="padding-top: 100" >
-          <table class="col-8 container-fluid">    
-            <tr>
-              
-              <th><b>COMPUTER ENGINEERING <b></th>
-              
-            </tr>        
-            <tr>
-              <td>  <a href="./exp1.html" style="color: black; text-decoration: none;">1. COMPUTER LAB 1 </a></td>
-              
-            </tr>
-            <tr>
-              <td> <a href="./exp1.html" style="color: black; text-decoration: none;">2. COMPUTER LAB 2 </a></td>
+                <input type="range" min="100" max="2000" step="1" value="100" id="r">
+                <p>Value: <span id="r-value"></span></p>
+                <button>Check Connections</button>
+                <button>Add to table</button>
+                <button>Plot</button>
+            </div>
             
-            </tr>
-            <tr>
-          </table>
+              <div class="col-6">
+                        <table id="mytable"  style = "border:1px solid black">                    
+                            <tbody>
+                              <tr>
+                                <th>Serial No.</th>
+                                <th>Forward Voltage(Volt)</th>
+                                <th>Forward Current(mAmp)</th>
+                            </tr>
+                            <tr>
+                              <td>1.</td>                   
+                              <td>22.98</td>
+                              <td>1.78</td>                   
+                            </tr>
+ 
+                        </tbody></table>
+    
+                    </div></div>
+              </div>
+
+                
+                <script>
+                  var slider = document.getElementById("dc");
+                  var output = document.getElementById("dc-value"); 
+                  
+                  output.innerHTML = slider.value;
+                  
+                    slider.oninput = function() {
+                      output.innerHTML = this.value;
+                    };
+                </script>
+
+                <script>
+                  var slider = document.getElementById("r");
+                  var output_r = document.getElementById("r-value"); 
+                  
+                  output_r.innerHTML = slider.value;
+                  
+                  slider.oninput = function() {
+                    output_r.innerHTML = this.value;
+                  };  
+
+                </script>
+
+
+            <!-- footer tag -->
+            <div class="blockquote-footer container-md col-7"  style="text-align: center; padding-top: 100px;" >
+              Copyright © 2021 Aligarh Muslim University Aligarh, India. </p>
+             </div>
+
+          
+          <!-- loading animation -->
           </div>
-      </div>
+          <div class="loader-wrapper">
+            <span class="loader">
+              <span class="loader-inner"></span>
+            </span>
+          </div>
+      
+          <script>
+            $(window).on("load",function(){
+            $(".loader-wrapper").fadeOut("slow");
+            }); 
+          </script>
 
-        <div class="blockquote-footer container-md col-7"  style="text-align: center; padding-top: 100px;" >
-         Copyright © 2020 Aligarh Muslim University Aligarh, India. </p>
-        </div>
-
-      </div>
-            <div class="loader-wrapper">
-              <span class="loader">
-                <span class="loader-inner"></span>
-              </span>
-            </div>
-        
-        <script>
-          $(window).on("load",function(){
-          $(".loader-wrapper").fadeOut("slow");
-          }); 
-        </script>
-        
-        <script  type="text/javascript" src="./Js/action.js"></script>
- </body>
+    </body>
 </html>

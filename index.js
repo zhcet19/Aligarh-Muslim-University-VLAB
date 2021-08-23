@@ -13,11 +13,15 @@ app.get("/",function(req,res){
  
 
 });
+app.get("/experiment",function(req,res){
+
+  res.render("experimentmenu")
+});
+
 app.get("/experiment1",function(req,res){
 
   res.render("experiments/experiment1")
 });
-
 app.listen(2000, function(){
     console.log("Welcome you to AMUVLAB");
   });
