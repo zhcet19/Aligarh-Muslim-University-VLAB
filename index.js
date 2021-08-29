@@ -15,8 +15,32 @@ app.get("/",function(req,res){
 });
 app.get("/experiment",function(req,res){
 
-  res.render("experimentmenu")
+  res.render("experimentmenu");
 });
+
+app.get("/index",function(req,res){
+  res.render("experimentindex");
+})
+
+app.get("/theory",function(req,res){
+  res.render("experimenttheory");
+})
+
+app.get("/procedure",function(req,res){
+  res.render("experimentprocedure");
+})
+app.get("/assignment",function(req,res){
+
+  res.render("experimentassignment");
+})
+app.get("/quiz",function(req,res){
+
+  res.render("experimentquiz");
+})
+app.get("/liveclass",function(req,res){
+
+  res.render("experimentliveclass");
+})
 
 app.get("/experiment1",function(req,res){
 

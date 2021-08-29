@@ -9,6 +9,7 @@
 
         <!-- cdn -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqPlot/1.0.9/jquery.jqplot.min.js"></script>
         <link rel="stylesheet" href="./stylesheets/loader.css">
 
         <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
@@ -74,21 +75,31 @@
 
               <!-- Will contain all the jsplumb stuff -->
               <!-- <img src="../images/diode_frwd.png" alt="" > -->
-                <img src="./images/diode_frwd.png" alt="" >
-                <div class="jtk-demo-main">
-                 <!-- demo -->
-                <div class="jtk-demo-canvas canvas-wide animation-demo jtk-surface jtk-surface-nopan" id="canvas">
-                
-                   <div class="bigdot" id="bd1"></div>
-                   <div class="bigdot" id="bd2"></div>
-                   <div class="bigdot" id="bd3"></div>
-                   <div class="bigdot" id="bd4"></div>
-                   <div class="bigdot" id="bd5"></div>
-                   <div class="bigdot" id="bd6"></div>
-                   <div class="bigdot" id="bd7"></div>
-                   <div class="bigdot" id="bd8"></div>
-   
-               </div>
+              <p> <img src="./images/diode_frwd.png" id="frwdimage" width="400px;height=400px;/">  </p>
+            
+              <div class="jtk-demo-canvas canvas-wide animation-demo jtk-surface jtk-surface-nopan" id="canvas">
+                <div class="littledot jtk-endpoint-anchor jtk-managed" id="ld1"><br><a href="#" class="cmdLink detach" rel="ld1">1</a>
+</div>			
+                <div class="littledot jtk-endpoint-anchor jtk-managed jtk-connected" id="ld3"><br><a href="#" class="cmdLink detach" rel="ld3">3</a></div>
+                <div class="littledot jtk-endpoint-anchor jtk-managed jtk-connected" id="ld4"><br><a href="#" class="cmdLink detach" rel="ld4">4</a></div>
+                <div class="littledot jtk-endpoint-anchor jtk-managed" id="ld5"><br><a href="#" class="cmdLink detach" rel="ld5">5</a></div>
+                <div class="littledot jtk-endpoint-anchor jtk-managed" id="ld6"><br><a href="#" class="cmdLink detach" rel="ld6">6</a></div>
+                <div class="littledot jtk-endpoint-anchor jtk-managed jtk-connected" id="ld7"><br><a href="#" class="cmdLink detach" rel="ld7">7</a></div>
+                <div class="littledot jtk-endpoint-anchor jtk-managed jtk-connected" id="ld8"><br><a href="#" class="cmdLink detach" rel="ld8">8</a></div>
+                <div class="littledot jtk-endpoint-anchor jtk-managed jtk-connected" id="ld9"><br><a href="#" class="cmdLink detach" rel="ld9">9</a></div> 
+                <div class="littledot jtk-endpoint-anchor jtk-managed" id="ld10"><br><a href="#" class="cmdLink detach" rel="ld10">10</a></div> 
+				<div class="littledot jtk-endpoint-anchor jtk-managed" id="ld11"><br><a href="#" class="cmdLink detach" rel="ld11">11</a></div> 				
+				
+                <div class="littledot jtk-endpoint-anchor jtk-managed" id="ld12"><br><a href="#" class="cmdLink detach" rel="ld12">12</a></div>
+		
+<img style="position: absolute; margin: 0px; padding: 0px; outline: currentcolor none 0px; height: 30px; width: 30px; left: 23px; top: 587px;" class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable" src="http://vlabs.iitkgp.ernet.in/be/exp5/littledot.png" width="30" height="30">
+<img style="position: absolute; margin: 0px; padding: 0px; outline: currentcolor none 0px; height: 30px; width: 30px; left: 25px; top: 387px; visibility: visible;" class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable endpointDrag jtk-endpoint-connected" src="http://vlabs.iitkgp.ernet.in/be/exp5/littledot.png" dragid="jsPlumb_2_39" elid="ld3" width="30" height="30">
+<img style="position: absolute; margin: 0px; padding: 0px; outline: currentcolor none 0px; height: 30px; width: 30px; left: 196px; top: 587px; visibility: visible;" class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable endpointDrag jtk-endpoint-connected" src="http://vlabs.iitkgp.ernet.in/be/exp5/littledot.png" dragid="jsPlumb_2_35" elid="ld4" width="30" height="30">
+<img style="position: absolute; margin: 0px; padding: 0px; outline: currentcolor none 0px; height: 30px; width: 30px; left: 326px; top: 116px;" class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable" src="http://vlabs.iitkgp.ernet.in/be/exp5/littledot.png" width="30" height="30"><img style="position: absolute; margin: 0px; padding: 0px; outline: currentcolor none 0px; height: 30px; width: 30px; left: 366px; top: 116px;" class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable" src="http://vlabs.iitkgp.ernet.in/be/exp5/littledot.png" width="30" height="30">
+<img style="position: absolute; margin: 0px; padding: 0px; outline: currentcolor none 0px; height: 30px; width: 30px; left: 223px; top: 1px;" class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable jtk-endpoint-connected" src="http://vlabs.iitkgp.ernet.in/be/exp5/littledot.png" width="30" height="30"><img style="position: absolute; margin: 0px; padding: 0px; outline: currentcolor none 0px; height: 30px; width: 30px; left: 276px; top: -1px; visibility: visible;" class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable endpointDrag jtk-endpoint-connected" src="http://vlabs.iitkgp.ernet.in/be/exp5/littledot.png" dragid="jsPlumb_2_27" elid="ld8" width="30" height="30">
+<img style="position: absolute; margin: 0px; padding: 0px; outline: currentcolor none 0px; height: 30px; width: 30px; left: 186px; top: 241px;" class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable jtk-endpoint-connected" src="http://vlabs.iitkgp.ernet.in/be/exp5/littledot.png" width="30" height="30"><img style="position: absolute; margin: 0px; padding: 0px; outline: currentcolor none 0px; height: 30px; width: 30px; left: 266px; top: 51px;" class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable" src="http://vlabs.iitkgp.ernet.in/be/exp5/littledot.png" width="30" height="30"><img style="position: absolute; margin: 0px; padding: 0px; outline: currentcolor none 0px; height: 30px; width: 30px; left: 271px; top: 201px;" class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable" src="http://vlabs.iitkgp.ernet.in/be/exp5/littledot.png" width="30" height="30"><img style="position: absolute; margin: 0px; padding: 0px; outline: currentcolor none 0px; height: 30px; width: 30px; left: 246px; top: 291px;" class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable" src="http://vlabs.iitkgp.ernet.in/be/exp5/littledot.png" width="30" height="30">
+<script src="./js/jsplumb1.js"></script>
+			   
                <!-- /demo -->
                <!-- explanation -->
                <!-- /explanation -->
@@ -105,6 +116,7 @@
                          
               <!--  ------------------------------------------ -->
 
+             
             <div class="col-5" style="visibility: hidden;">This is a rubbus</div>
               <select id="diode_type">
                 <option value="choose" selected="">Choose Diode</option> 
@@ -115,6 +127,7 @@
                 <option value="0.62">1N4448</option>
                 <option value="0.6">1N5408</option>
               </select>
+        
 
               <input type="text" value="" id="diodevalue" placeholder="Diode Value" style="background-color:#f0eaea;" readonly="">
               <div class="col-5" style="visibility: hidden;">This is a rubbus</div>

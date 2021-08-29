@@ -61,3 +61,41 @@ h5:hover .instruct{
     font-size: 15px;
 
 }
+nav#lab-article-navigation, nav#experiment-article-navigation 
+{
+	height:90px;
+	margin: 0 auto;
+	width:1024px;
+	background: url(../images/content_bg.jpg);
+} 
+nav#lab-article-navigation ul li, nav#experiment-article-navigation ul li
+{
+	float: left;
+	list-style: none;
+	margin-right: 0.3em; 
+}
+
+nav#lab-article-navigation ul li img, nav#experiment-article-navigation ul li img
+{
+	width:50px;
+	height:50px;
+} 
+nav#lab-article-navigation ul li a:link, nav#experiment-article-navigation ul li a:link,
+nav#lab-article-navigation ul li a:visited, nav#experiment-article-navigation ul li a:visited
+{
+	color:#02568e;
+	text-decoration: underline;
+	float: right;
+	font-size: 16px;
+	text-transform:uppercase;
+	padding: 9px;
+}
+
+nav#lab-article-navigation ul li a:hover, nav#experiment-article-navigation ul li a:hover,
+nav#lab-article-navigation ul li a:focus, nav#experiment-article-navigation ul li a:focus 
+{
+	color: #ffffff;
+	background-color:#02568e;
+}
+
+
