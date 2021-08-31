@@ -1,213 +1,94 @@
-<!DOCTYPE html>
-<html>
-    <!-- some scripts -->
-    <title>Basic Electronics</title>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- google font -->
-
-        <!-- cdn -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqPlot/1.0.9/jquery.jqplot.min.js"></script>
-        <link rel="stylesheet" href="./stylesheets/loader.css">
-
-        <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-        
-        <link href="./stylesheets/app.css" rel="stylesheet">   
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jsPlumb/2.15.6/js/jsplumb.js"></script>
-        <script src="./Js/demo.js"></script>
-                  
-        <link rel="stylesheet" href="./stylesheets/demo.css">     
-    </head>
-
-  <body>
-    <!-- nav bar -->
-        <div class="container-fluid content col-8 ">
-        <img align="right" src="./images/AMU_logo.png" alt="">         
-          <a href="https://www.amu.ac.in"> </a> 
-                <!-- nav bar -->
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                  <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
-                      <img src="./images/AMU.png" alt=""/>
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                      <span style="color:black" class="navbar-toggler-icon">
-                      </span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                      <ul class="navbar-nav" style="font-size:20px;">
-                        <li class="nav-item">
-                          <a class="nav-link " aria-current="page" href="/"> <b>HOME</b></a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link active" href="/experiment" data-toggle="tooltip" data-placement="top" title="Currently here" > <b>LABS </b></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </nav>
-                <div class="container pb-lg-1">
-                    <nav aria-label="breadcrumb">
-                      <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item"><a href="/experiment">Labs</a></li>
-                        <li class="breadcrumb-item " aria-current="page">VI Characteristics of a Diode</li>
-                        <li class="breadcrumb-item active" aria-current="page">Forward Bias</li>
-                      </ol>
-                    </nav>
-             </div>
-
-            <!-- main body -->
-            <div >
-              <h5>  VI Characteristics Of a Diode <span class="instruct" style="color: rgb(154, 154, 163);">| Forward Bias</span> </h5>
-            </div>
-            <div style="background-color: blue; visibility: hidden;">
-              <p>Some ransom text</p>
-            </div>
-            </div>            
-        <div class="container-lg">
-          <div class="row">
-            <div class="col-6 pt-5">
-
-              <!-- Will contain all the jsplumb stuff -->
-              <!-- <img src="../images/diode_frwd.png" alt="" > -->
-              <p> <img src="./images/diode_frwd.png" id="frwdimage" width="400px;height=400px;/">  </p>
-            
-              <div class="jtk-demo-canvas canvas-wide animation-demo jtk-surface jtk-surface-nopan" id="canvas">
-                <div class="littledot jtk-endpoint-anchor jtk-managed" id="ld1"><br><a href="#" class="cmdLink detach" rel="ld1">1</a>
-</div>			
-                <div class="littledot jtk-endpoint-anchor jtk-managed jtk-connected" id="ld3"><br><a href="#" class="cmdLink detach" rel="ld3">3</a></div>
-                <div class="littledot jtk-endpoint-anchor jtk-managed jtk-connected" id="ld4"><br><a href="#" class="cmdLink detach" rel="ld4">4</a></div>
-                <div class="littledot jtk-endpoint-anchor jtk-managed" id="ld5"><br><a href="#" class="cmdLink detach" rel="ld5">5</a></div>
-                <div class="littledot jtk-endpoint-anchor jtk-managed" id="ld6"><br><a href="#" class="cmdLink detach" rel="ld6">6</a></div>
-                <div class="littledot jtk-endpoint-anchor jtk-managed jtk-connected" id="ld7"><br><a href="#" class="cmdLink detach" rel="ld7">7</a></div>
-                <div class="littledot jtk-endpoint-anchor jtk-managed jtk-connected" id="ld8"><br><a href="#" class="cmdLink detach" rel="ld8">8</a></div>
-                <div class="littledot jtk-endpoint-anchor jtk-managed jtk-connected" id="ld9"><br><a href="#" class="cmdLink detach" rel="ld9">9</a></div> 
-                <div class="littledot jtk-endpoint-anchor jtk-managed" id="ld10"><br><a href="#" class="cmdLink detach" rel="ld10">10</a></div> 
-				<div class="littledot jtk-endpoint-anchor jtk-managed" id="ld11"><br><a href="#" class="cmdLink detach" rel="ld11">11</a></div> 				
-				
-                <div class="littledot jtk-endpoint-anchor jtk-managed" id="ld12"><br><a href="#" class="cmdLink detach" rel="ld12">12</a></div>
-		
-<img style="position: absolute; margin: 0px; padding: 0px; outline: currentcolor none 0px; height: 30px; width: 30px; left: 23px; top: 587px;" class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable" src="http://vlabs.iitkgp.ernet.in/be/exp5/littledot.png" width="30" height="30">
-<img style="position: absolute; margin: 0px; padding: 0px; outline: currentcolor none 0px; height: 30px; width: 30px; left: 25px; top: 387px; visibility: visible;" class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable endpointDrag jtk-endpoint-connected" src="http://vlabs.iitkgp.ernet.in/be/exp5/littledot.png" dragid="jsPlumb_2_39" elid="ld3" width="30" height="30">
-<img style="position: absolute; margin: 0px; padding: 0px; outline: currentcolor none 0px; height: 30px; width: 30px; left: 196px; top: 587px; visibility: visible;" class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable endpointDrag jtk-endpoint-connected" src="http://vlabs.iitkgp.ernet.in/be/exp5/littledot.png" dragid="jsPlumb_2_35" elid="ld4" width="30" height="30">
-<img style="position: absolute; margin: 0px; padding: 0px; outline: currentcolor none 0px; height: 30px; width: 30px; left: 326px; top: 116px;" class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable" src="http://vlabs.iitkgp.ernet.in/be/exp5/littledot.png" width="30" height="30"><img style="position: absolute; margin: 0px; padding: 0px; outline: currentcolor none 0px; height: 30px; width: 30px; left: 366px; top: 116px;" class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable" src="http://vlabs.iitkgp.ernet.in/be/exp5/littledot.png" width="30" height="30">
-<img style="position: absolute; margin: 0px; padding: 0px; outline: currentcolor none 0px; height: 30px; width: 30px; left: 223px; top: 1px;" class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable jtk-endpoint-connected" src="http://vlabs.iitkgp.ernet.in/be/exp5/littledot.png" width="30" height="30"><img style="position: absolute; margin: 0px; padding: 0px; outline: currentcolor none 0px; height: 30px; width: 30px; left: 276px; top: -1px; visibility: visible;" class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable endpointDrag jtk-endpoint-connected" src="http://vlabs.iitkgp.ernet.in/be/exp5/littledot.png" dragid="jsPlumb_2_27" elid="ld8" width="30" height="30">
-<img style="position: absolute; margin: 0px; padding: 0px; outline: currentcolor none 0px; height: 30px; width: 30px; left: 186px; top: 241px;" class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable jtk-endpoint-connected" src="http://vlabs.iitkgp.ernet.in/be/exp5/littledot.png" width="30" height="30"><img style="position: absolute; margin: 0px; padding: 0px; outline: currentcolor none 0px; height: 30px; width: 30px; left: 266px; top: 51px;" class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable" src="http://vlabs.iitkgp.ernet.in/be/exp5/littledot.png" width="30" height="30"><img style="position: absolute; margin: 0px; padding: 0px; outline: currentcolor none 0px; height: 30px; width: 30px; left: 271px; top: 201px;" class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable" src="http://vlabs.iitkgp.ernet.in/be/exp5/littledot.png" width="30" height="30"><img style="position: absolute; margin: 0px; padding: 0px; outline: currentcolor none 0px; height: 30px; width: 30px; left: 246px; top: 291px;" class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable" src="http://vlabs.iitkgp.ernet.in/be/exp5/littledot.png" width="30" height="30">
-<script src="./js/jsplumb1.js"></script>
-			   
-               <!-- /demo -->
-               <!-- explanation -->
-               <!-- /explanation -->
-           </div>
-          
-           <!-- JS -->
-           <script src="https://cdnjs.cloudflare.com/ajax/libs/jsPlumb/2.15.6/js/jsplumb.js"></script>
-   
-           <script src="./Js/demo.js"></script>
-           
-               <!-- /demo -->
-               <!-- explanation -->
-               <!-- /explanation -->
-                         
-              <!--  ------------------------------------------ -->
-
-             
-            <div class="col-5" style="visibility: hidden;">This is a rubbus</div>
-              <select id="diode_type">
-                <option value="choose" selected="">Choose Diode</option> 
-                <option value="0.6">1N4001</option>                                  
-                <option value="0.6">1N4004</option>
-                <option value="0.6">1N4007</option>
-                <option value="0.5">1N4148</option>
-                <option value="0.62">1N4448</option>
-                <option value="0.6">1N5408</option>
-              </select>
-        
-
-              <input type="text" value="" id="diodevalue" placeholder="Diode Value" style="background-color:#f0eaea;" readonly="">
-              <div class="col-5" style="visibility: hidden;">This is a rubbus</div>
-                <span>DC VOLTS:   &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</span>
-                
-                <input type="range" min="0" max="5" step="0.1" value="0" id="dc">
-                <p>Value: <span id="dc-value"></span></p>
-
-                <span>RESISTANCE:  &nbsp; &nbsp;</span>
-                
-                <input type="range" min="100" max="2000" step="1" value="100" id="r">
-                <p>Value: <span id="r-value"></span></p>
-                <button>Check Connections</button>
-                <button>Add to table</button>
-                <button>Plot</button>
-            </div>
-            
-              <div class="col-6">
-                        <table id="mytable"  style = "border:1px solid black">                    
-                            <tbody>
-                              <tr>
-                                <th>Serial No.</th>
-                                <th>Forward Voltage(Volt)</th>
-                                <th>Forward Current(mAmp)</th>
-                            </tr>
-                            <tr>
-                              <td>1.</td>                   
-                              <td>22.98</td>
-                              <td>1.78</td>                   
-                            </tr>
- 
-                        </tbody></table>
-    
-                    </div></div>
-              </div>
-
-                
-                <script>
-                  var slider = document.getElementById("dc");
-                  var output = document.getElementById("dc-value"); 
-                  
-                  output.innerHTML = slider.value;
-                  
-                    slider.oninput = function() {
-                      output.innerHTML = this.value;
-                    };
-                </script>
-
-                <script>
-                  var slider = document.getElementById("r");
-                  var output_r = document.getElementById("r-value"); 
-                  
-                  output_r.innerHTML = slider.value;
-                  
-                  slider.oninput = function() {
-                    output_r.innerHTML = this.value;
-                  };  
-
-                </script>
+<%- include ('../partials/header') %>
+  <!-- main body -->
+  <div>
+    <h5> VI Characteristics Of a Diode <span class="instruct" style="color: rgb(154, 154, 163);">| Forward Bias</span>
+    </h5>
+  </div>
+  <div style="background-color: blue; visibility: hidden;">
+    <p>Some ransom text</p>
+  </div>
+  </div>
+  <div class="container-lg">
+    <div class="row">
+      <div class="col-6 pt-5">
 
 
-            <!-- footer tag -->
-            <div class="blockquote-footer container-md col-7"  style="text-align: center; padding-top: 100px;" >
-              Copyright © 2021 Aligarh Muslim University Aligarh, India. </p>
-             </div>
+        <div class="col-5" style="visibility: hidden;">This is a rubbus</div>
+        <select id="diode_type">
+          <option value="choose" selected="">Choose Diode</option>
+          <option value="0.6">1N4001</option>
+          <option value="0.6">1N4004</option>
+          <option value="0.6">1N4007</option>
+          <option value="0.5">1N4148</option>
+          <option value="0.62">1N4448</option>
+          <option value="0.6">1N5408</option>
+        </select>
 
-          
-          <!-- loading animation -->
-          </div>
-          <div class="loader-wrapper">
-            <span class="loader">
-              <span class="loader-inner"></span>
-            </span>
-          </div>
-      
-          <script>
-            $(window).on("load",function(){
-            $(".loader-wrapper").fadeOut("slow");
-            }); 
-          </script>
 
-    </body>
-</html>
+        <input type="text" value="" id="diodevalue" placeholder="Diode Value" style="background-color:#f0eaea;"
+          readonly="">
+        <div class="col-5" style="visibility: hidden;">This is a rubbus</div>
+        <span>DC VOLTS: &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</span>
+
+        <input type="range" min="0" max="5" step="0.1" value="0" id="dc">
+        <p>Value: <span id="dc-value"></span></p>
+
+        <span>RESISTANCE: &nbsp; &nbsp;</span>
+
+        <input type="range" min="100" max="2000" step="1" value="100" id="r">
+        <p>Value: <span id="r-value"></span></p>
+        <button>Check Connections</button>
+        <button>Add to table</button>
+        <button>Plot</button>
+      </div>
+
+      <div class="col-6">
+        <table id="mytable" style="border:1px solid black">
+          <tbody>
+            <tr>
+              <th>Serial No.</th>
+              <th>Forward Voltage(Volt)</th>
+              <th>Forward Current(mAmp)</th>
+            </tr>
+            <tr>
+              <td>1.</td>
+              <td>22.98</td>
+              <td>1.78</td>
+            </tr>
+
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <script>
+    var slider = document.getElementById("dc");
+    var output = document.getElementById("dc-value");
+
+    output.innerHTML = slider.value;
+
+    slider.oninput = function () {
+      output.innerHTML = this.value;
+    };
+  </script>
+
+
+  <script>
+    var slider = document.getElementById("r");
+    var output_r = document.getElementById("r-value");
+
+    output_r.innerHTML = slider.value;
+
+    slider.oninput = function () {
+      output_r.innerHTML = this.value;
+    };
+  </script>
+
+
+  <%- include ('../partials/footer') %>

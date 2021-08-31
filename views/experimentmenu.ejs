@@ -1,168 +1,97 @@
-<!DOCTYPE html>
-<html>
-    <!-- some scripts -->
-    <title>AMU-VLABS</title>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- google font -->
+<%- include ('./partials/header') %>
+  <nav class="navbar navbar-expand-lg col-5 container-fluid mt-3"
+    style="color: rgb(248, 247, 247); background-color:rgb(165, 47, 53);; padding-left:90 ;">
+    <div class="container-fluid" color="white">
+      <a class="navbar-brand" href="#" style="color: rgb(255, 255, 255);" data-toggle="tooltip" data-placement="top"
+        title="Current"><b>LABS</b> </a>
+      <button class="navbar-toggler" id="expand" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">
+          <p class="expanded" style="font-size:30px"> +</p>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" class="tooltip" data-toggle="tooltip" data-placement="bottom"
+              title="THIS SITE WORKS BEST WITH PC BROWSERS. MAKE SURE FOR AFFECTIVE SIMULATION OPT FOR LATEST FIREFOX OR CHROME PC BROWSERS"
+              href="#" style="color: rgb(255, 255, 255);">
+              INTRODUCTION
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="tooltip" data-placement="bottom" title="Select course"
+              href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+              style="color: rgb(255, 255, 255);">
+              COURSES
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">ELA</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">COC</a></li>
+            </ul>
+          </li>
+      </div>
+    </div>
+  </nav>
+  </div>
 
-        <link rel="stylesheet" href="/stylesheets/loader.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-        
-        <!-- <link rel="stylesheet" href="/bootstrap-5.0.0-beta1-dist/css/bootstrap.css"> -->
-        <!-- <script src="/bootstrap-5.0.0-beta1-dist/js/bootstrap.js"></script> -->
-        <link href="/stylesheets/app.css" rel="stylesheet">
-    </head>
+  <div class="container col-10 pt-5">
+    <div class="ela">
+      <table class="col-8 container-fluid">
+        <tr>
+          <th>BASIC ELECTORINCS </th>
+        </tr>
 
-  <body>
-        <div class=" content container-fluid ">
-          <img align="right" src="/images/AMU_logo.png" alt="">         
-          <a href="https://www.amu.ac.in"> </a> 
-                <!-- nav bar -->
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                  <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
-                      <img src="/images/AMU.png" alt=/>
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                      <span style="color:black" class="navbar-toggler-icon">
-                      </span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                      <ul class="navbar-nav" style="font-size:20px;">
-                        <li class="nav-item">
-                          <a class="nav-link " aria-current="page" href="/"> <b>HOME</b></a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link active" href="/experiment" data-toggle="tooltip" data-placement="top" title="Currently here" > <b>LABS </b></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </nav>
-          </div>
-
-        <nav class="navbar navbar-expand-lg col-5 container-fluid mt-3" style="color: rgb(248, 247, 247); background-color:rgb(165, 47, 53);; padding-left:90 ;">
-          <div class="container-fluid" color="white">
-            <a class="navbar-brand" href="#" style="color: rgb(255, 255, 255);" data-toggle="tooltip" data-placement="top" title="Current"><b>LABS</b> </a>
-            <button class="navbar-toggler"  id="expand" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon">
-                <p class="expanded"style="font-size:30px" > +</p>
-              </span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" class="tooltip"  data-toggle="tooltip" data-placement="bottom" title="THIS SITE WORKS BEST WITH PC BROWSERS. MAKE SURE FOR AFFECTIVE SIMULATION OPT FOR LATEST FIREFOX OR CHROM PC BROWSERS" href="#"  style="color: rgb(255, 255, 255);"> 
-                     INTRODUCTION
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" data-toggle="tooltip" data-placement="bottom" title="Select course" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"  style="color: rgb(255, 255, 255);">
-                    COURSES
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">ELA</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">COC</a></li>
-                  </ul>
-                  </li>
-            </div>
-          </div>
-        </nav>
-      </div> 
-
-        <div class="container col-10 pt-5">
-          <div class ="ela">
-            <table class="col-8 container-fluid">    
-                <tr>
-                  
-                  <th>BASIC ELECTORINCS </th>
-                  
-                </tr>        
-                
-                <tr>
-                    <td> <a href="/index" style="color: black; text-decoration: none;">1. VI Characteristics of a Diode </a> </td>
-                </tr>
-
-                <tr>
-                  <td> <a href="/index" style="color: black; text-decoration: none;">2. Half Wave Rectification </a></td>
-                 
-                </tr>
-                <tr>
-                  <td>
-                    <a href="/index" style="color: black; text-decoration: none;">
-                    3. Full Wave Rectification
-                    </a>
-                  </td>
-                
-                </tr>
-                <tr>
-                  <td> <a href="/index" style="color: black; text-decoration: none;"> 4. Capacitative Rectification </a></td>
-                </tr>
-                <tr>
-                  <td> <a href="/index" style="color: black; text-decoration: none;">5. Zener Diode-Voltage Regulator </a> </td>
-                </tr>
-                <tr>
-                    <td> <a href="/index" style="color: black; text-decoration: none;"> 6. BJT Common Emitter Characteristics**</a> </td>
-                </tr>
-                <tr>
-                  <td>
-                    <a href="/index" style="color: black; text-decoration: none;">7. BJT Common Base Characteristics** </a></td>
-                </tr>
-                <tr>
-                  <td>
-                    <a href="/index" style="color: black; text-decoration: none;">8. Studies on BJT CE Amplifier </a></td>
-                </tr>
-                <tr>
-                  <td> <a href="/index" style="color: black; text-decoration: none;">9. RC Frequency Response</a></td>
-                </tr>
-                
-            </table>
-          </div>
+        <%experiments.forEach( function(experiment){ %>
+          <tr>
+            <td> 
+            <form id="Fm" action="/index" method="POST">
+                <a href="#" id="exp"  onclick="submitForm('<%=experiment%>')" style="color: black; text-decoration: none;"> <%=experiment %> </a> 
+                <input type="text" name="expvalue" value="" style="visibility: hidden;">
+            </form>
+          </td>
+          </tr>
+          <% }) %>     
+         
+        </table>
+    </div>
 
 
-          <div class ="coc pt-5" style="padding-top: 100" >
-          <table class="col-8 container-fluid">    
-            <tr>
-              
-              <th><b>COMPUTER ENGINEERING <b></th>
-              
-            </tr>        
-            <tr>
-              <td>  <a href="/index" style="color: black; text-decoration: none;">1. COMPUTER LAB 1 </a></td>
-              
-            </tr>
-            <tr>
-              <td> <a href="/index" style="color: black; text-decoration: none;">2. COMPUTER LAB 2 </a></td>
+    <div class="coc pt-5" style="padding-top: 100">
+      <table class="col-8 container-fluid">
+        <tr>
+
+          <th><b>COMPUTER ENGINEERING <b></th>
+
+        </tr>
+        <tr>
+          <td> <a href="/index" style="color: black; text-decoration: none;">1. COMPUTER LAB 1 </a></td>
+
+        </tr>
+        <tr>
+          <td> <a href="/index" style="color: black; text-decoration: none;">2. COMPUTER LAB 2 </a></td>
+
+        </tr>
+        <tr>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    var inps = document.getElementsByTagName('input');
             
-            </tr>
-            <tr>
-          </table>
-          </div>
-      </div>
+            submitForm = function(expvalue){
+              alert(expvalue);
+              for(var j=0;j<inps.length;j++){
+                    inps[j].value = expvalue;
+                    
+                  }
+              document.getElementById('Fm').submit();
+         };
+  </script>
 
-        <div class="blockquote-footer container-md col-7"  style="text-align: center; padding-top: 100px;" >
-         Copyright © 2020 Aligarh Muslim University Aligarh, India. </p>
-        </div>
-
-      </div>
-            <div class="loader-wrapper">
-              <span class="loader">
-                <span class="loader-inner"></span>
-              </span>
-            </div>
-        
-        <script>
-          $(window).on("load",function(){
-          $(".loader-wrapper").fadeOut("slow");
-          }); 
-        </script>
-        
-        <script  type="text/javascript" src="/Js/action.js"></script>
- </body>
-</html>
+  <%- include ('./partials/footer') %>
