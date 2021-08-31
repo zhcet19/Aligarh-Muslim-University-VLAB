@@ -70,7 +70,7 @@ nav#lab-article-navigation, nav#experiment-article-navigation
 } 
 nav#lab-article-navigation ul li, nav#experiment-article-navigation ul li
 {
-	float: left;
+	float: left ;
 	list-style: none;
 	margin-right: 0.3em; 
 }
@@ -95,7 +95,7 @@ nav#lab-article-navigation ul li a:hover, nav#experiment-article-navigation ul l
 nav#lab-article-navigation ul li a:focus, nav#experiment-article-navigation ul li a:focus 
 {
 	color: #ffffff;
-	background-color:#02568e;
+	background-color:#c5ccc8;
 }
 
 
