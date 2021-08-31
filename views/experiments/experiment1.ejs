@@ -1,48 +1,19 @@
 <%- include ('../partials/header') %>
   <!-- main body -->
+  <link href="./stylesheets/demo.css" rel="stylesheet">   
+  <link rel="stylesheet" href="./stylesheets/diode_fwd.css">
   <div>
     <h5> VI Characteristics Of a Diode <span class="instruct" style="color: rgb(154, 154, 163);">| Forward Bias</span>
     </h5>
   </div>
   <div style="background-color: blue; visibility: hidden;">
-    <p>Some ransom text</p>
+    <p>Some random text</p>
   </div>
   </div>
+  
   <div class="container-lg">
     <div class="row">
-      <div class="col-6 pt-5">
-
-
-        <div class="col-5" style="visibility: hidden;">This is a rubbus</div>
-        <select id="diode_type">
-          <option value="choose" selected="">Choose Diode</option>
-          <option value="0.6">1N4001</option>
-          <option value="0.6">1N4004</option>
-          <option value="0.6">1N4007</option>
-          <option value="0.5">1N4148</option>
-          <option value="0.62">1N4448</option>
-          <option value="0.6">1N5408</option>
-        </select>
-
-
-        <input type="text" value="" id="diodevalue" placeholder="Diode Value" style="background-color:#f0eaea;"
-          readonly="">
-        <div class="col-5" style="visibility: hidden;">This is a rubbus</div>
-        <span>DC VOLTS: &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</span>
-
-        <input type="range" min="0" max="5" step="0.1" value="0" id="dc">
-        <p>Value: <span id="dc-value"></span></p>
-
-        <span>RESISTANCE: &nbsp; &nbsp;</span>
-
-        <input type="range" min="100" max="2000" step="1" value="100" id="r">
-        <p>Value: <span id="r-value"></span></p>
-        <button>Check Connections</button>
-        <button>Add to table</button>
-        <button>Plot</button>
-      </div>
-
-      <div class="col-6">
+      <div class="col-5">
         <table id="mytable" style="border:1px solid black">
           <tbody>
             <tr>
@@ -55,17 +26,130 @@
               <td>22.98</td>
               <td>1.78</td>
             </tr>
-
           </tbody>
         </table>
+      </div>
 
+      <div class="col-6">
+        <script src="./Js/jsplumb.js"></script>
+        <div id="ckt_values1" style="position:relative; top:0px;left:300px; height:300px; width:400px">
+          <p>
+            <img src="./images/diode_frwd.png" id="frwdimage" width="400px;height=400px;/">
+            
+       </p>
+
+          <div class="jtk-demo-canvas canvas-wide animation-demo jtk-surface jtk-surface-nopan" id="canvas">
+            <div class="littledot jtk-endpoint-anchor jtk-managed" id="ld1"><br><a href="#" class="cmdLink detach"
+                rel="ld1">1</a>
+            </div>
+            <div class="littledot jtk-endpoint-anchor jtk-managed" id="ld3"><br><a href="#" class="cmdLink detach"
+                rel="ld3">3</a></div>
+            <div class="littledot jtk-endpoint-anchor jtk-managed" id="ld4"><br><a href="#" class="cmdLink detach"
+                rel="ld4">4</a></div>
+            <div class="littledot jtk-endpoint-anchor jtk-managed" id="ld5"><br><a href="#" class="cmdLink detach"
+                rel="ld5">5</a></div>
+            <div class="littledot jtk-endpoint-anchor jtk-managed" id="ld6"><br><a href="#" class="cmdLink detach"
+                rel="ld6">6</a></div>
+            <div class="littledot jtk-endpoint-anchor jtk-managed" id="ld7"><br><a href="#" class="cmdLink detach"
+                rel="ld7">7</a></div>
+            <div class="littledot jtk-endpoint-anchor jtk-managed" id="ld8"><br><a href="#" class="cmdLink detach"
+                rel="ld8">8</a></div>
+            <div class="littledot jtk-endpoint-anchor jtk-managed" id="ld9"><br><a href="#" class="cmdLink detach"
+                rel="ld9">9</a></div>
+            <div class="littledot jtk-endpoint-anchor jtk-managed" id="ld10"><br><a href="#" class="cmdLink detach"
+                rel="ld10">10</a></div>
+            <div class="littledot jtk-endpoint-anchor jtk-managed" id="ld11"><br><a href="#" class="cmdLink detach"
+                rel="ld11">11</a></div>
+            <div class="littledot jtk-endpoint-anchor jtk-managed" id="ld12"><br><a href="#" class="cmdLink detach"
+                rel="ld12">12</a></div>
+      
+            <img class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable"
+              style="position: absolute; margin: 0px; padding: 0px; outline: 0px; height: 30px; width: 30px; left: 11.5px; top: 241.5px;"
+              src="./images/littledot.png" height="30" width="30"><img
+              class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable"
+              style="position: absolute; margin: 0px; padding: 0px; outline: 0px; height: 30px; width: 30px; left: 16px; top: 41.5px;"
+              src="./images/littledot.png" height="30" width="30"><img
+              class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable"
+              style="position: absolute; margin: 0px; padding: 0px; outline: 0px; height: 30px; width: 30px; left: 196px; top: 41.5px;"
+              src="./images/littledot.png" height="30" width="30"><img
+              class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable"
+              style="position: absolute; margin: 0px; padding: 0px; outline: 0px; height: 30px; width: 30px; left: 326.5px; top: 116px;"
+              src="./images/littledot.png" height="30" width="30"><img
+              class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable"
+              style="position: absolute; margin: 0px; padding: 0px; outline: 0px; height: 30px; width: 30px; left: 366px; top: 116px;"
+              src="./images/littledot.png" height="30" width="30"><img
+              class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable"
+              style="position: absolute; margin: 0px; padding: 0px; outline: 0px; height: 30px; width: 30px; left: 223px; top: 1px;"
+              src="./images/littledot.png" height="30" width="30"><img
+              class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable"
+              style="position: absolute; margin: 0px; padding: 0px; outline: 0px; height: 30px; width: 30px; left: 276px; top: -1px;"
+              src="./images/littledot.png" height="30" width="30"><img
+              class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable"
+              style="position: absolute; margin: 0px; padding: 0px; outline: 0px; height: 30px; width: 30px; left: 186px; top: 241.5px;"
+              src="./images/littledot.png" height="30" width="30"><img
+              class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable"
+              style="position: absolute; margin: 0px; padding: 0px; outline: 0px; height: 30px; width: 30px; left: 266px; top: 51px;"
+              src="./images/littledot.png" height="30" width="30"><img
+              class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable"
+              style="position: absolute; margin: 0px; padding: 0px; outline: 0px; height: 30px; width: 30px; left: 271.5px; top: 201px;"
+              src="./images/littledot.png" height="30" width="30"><img
+              class="jtk-endpoint jtk-endpoint-anchor jtk-draggable jtk-droppable"
+              style="position: absolute; margin: 0px; padding: 0px; outline: 0px; height: 30px; width: 30px; left: 246px; top: 291px;"
+              src="./images/littledot.png" height="30" width="30">
+          </div>
+          
+          <script src="./Js/demo.js"></script>
+            <div class="example-content" style="position:absolute; top:10px;right:150px;left:200px">
+
+          </div>
+          <input type="text" id="dc" value="" placeholder="Volt" oninput="txtchng()"
+            style="background-color:#e6f5ff;position:absolute; top:290px;  right:225px;  width:70px" readonly="">
+          <input type="text" value="" id="volt" placeholder="Volt"
+            style="background-color:#e6f5ff;position:absolute; top:173px;  right:20px; width:70px" readonly="">
+          <input type="text" value="" id="amp" placeholder="Ampere"
+            style="background-color:#e6f5ff;position:absolute; top:22px;  right:185px; width:70px" readonly="">
+          <input type="text" value="" id="res" placeholder="Resistance" oninput="txtchnge()"
+            style="background-color:#e6f5ff;position:absolute; top:90px;  right:270px; width:90px" readonly="">
+        </div>
       </div>
     </div>
-  </div>
 
 
 
 
+
+
+
+      <div class="row">
+        <div class="col-6">
+          <select id="diode_type">
+            <option value="choose" selected="">Choose Diode</option>
+            <option value="0.6">1N4001</option>
+            <option value="0.6">1N4004</option>
+            <option value="0.6">1N4007</option>
+            <option value="0.5">1N4148</option>
+            <option value="0.62">1N4448</option>
+            <option value="0.6">1N5408</option>
+          </select>
+
+
+          <input type="text" value="" id="diodevalue" placeholder="Diode Value" style="background-color:#f0eaea;"
+            readonly="">
+          <div class="col-5" style="visibility: hidden;">This is a rubbus</div>
+          <span>DC VOLTS: &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</span>
+
+          <input type="range" min="0" max="5" step="0.1" value="0" id="dc">
+          <p>Value: <span id="dc-value"></span></p>
+
+          <span>RESISTANCE: &nbsp; &nbsp;</span>
+
+          <input type="range" min="100" max="2000" step="1" value="100" id="r">
+          <p>Value: <span id="r-value"></span></p>
+          <button>Check Connections</button>
+          <button>Add to table</button>
+          <button>Plot</button>
+        </div>
+      </div>
 
   <script>
     var slider = document.getElementById("dc");
