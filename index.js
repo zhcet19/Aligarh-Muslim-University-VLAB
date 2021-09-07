@@ -47,10 +47,7 @@ app.get("/index", function (req, res) {
 });
 
 
-app.post("/index", (req,res)=> {
-  console.log(req.body["expvalue"]);
-  // res.redirect("experimentindex.js");
-});
+
 
 
 app.get("/theory", function (req, res) {

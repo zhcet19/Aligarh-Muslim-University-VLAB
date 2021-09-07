@@ -49,10 +49,8 @@
         <%experiments.forEach( function(experiment){ %>
           <tr>
             <td> 
-            <form id="Fm" action="/index" method="POST">
-                <a href="/index" id="exp"  onclick="submitForm('<%=experiment%>')" style="color: black; text-decoration: none;"> <%=experiment %> </a> 
-                <input type="text" name="expvalue" value="" style="visibility: hidden;">
-            </form>
+            
+                <a href="/index" id="exp"  style="color: black; text-decoration: none;"> <%=experiment %> </a> 
           </td>
           </tr>
           <% }) %>     

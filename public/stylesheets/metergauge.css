@@ -1,0 +1,18 @@
+
+		.plot {
+			margin-bottom: 0px;
+			margin-left: 0px;
+			margin-right: 0px;
+		}
+		#chart0 .jqplot-meterGauge-label {
+			font-size: 10pt;
+		}
+		#chart1 .jqplot-meterGauge-tick, #chart0 .jqplot-meterGauge-tic {
+		font-size: 10pt;
+		}
+                #chart2 .jqplot-meterGauge-tick, #chart0 .jqplot-meterGauge-tic {
+		font-size: 10pt;
+		}
+		grid: {
+ background: 'transparent' 
+}
