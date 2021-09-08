@@ -27,19 +27,19 @@ Therfore we come up with an idea for our own university Vlab platform.
 
 ## Screenshots
 1) Front page of  website
-![alt text]()
+![alt text](https://github.com/zhcet19/Aligarh-Muslim-University-VLAB/blob/main/preview/pic2.png)
 
 2) List of Experiments
-![alt text]()
+![alt text](https://github.com/zhcet19/Aligarh-Muslim-University-VLAB/blob/main/preview/pic3.png)
 
 5) Procedure tab of Experiment
-![alt text]()
+![alt text](https://github.com/zhcet19/Aligarh-Muslim-University-VLAB/blob/main/preview/pic4.png)
 
 3) Theory tab of Experiment
-![alt text]()
+![alt text](https://github.com/zhcet19/Aligarh-Muslim-University-VLAB/blob/main/preview/pic5.png)
 
 4) Simulation tab of Experiment
-![alt text]()
+![alt text](https://github.com/zhcet19/Aligarh-Muslim-University-VLAB/blob/main/preview/pic6.png)
 
 
 
