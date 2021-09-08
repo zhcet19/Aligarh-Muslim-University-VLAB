@@ -1,7 +1,9 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-
+var mongoose  = require("mongoose");
 var app = express();
+const MONGODB_URL ='mongodb+srv://AMU_VLAB_ADMIN:ZVL1vxcOIdbJ2VkH@cluster0.5csqp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+mongoose.connect(MONGODB_URL, {useNewUrlParser: true, useUnifiedTopology: true});
 
 var experiments  = [
 
@@ -73,6 +75,10 @@ app.get("/liveclass", function (req, res) {
 
 app.get("/experiment1", function (req, res) {
   res.render("experiments/experiment1");
+});
+
+mongoose.connection.on("connected", () => {
+  console.log("connected");
 });
 
 app.listen(2000, function () {
