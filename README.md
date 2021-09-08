@@ -9,7 +9,7 @@
 
 > During pandemics, our labs have suffered a lot. As an alternate, we have been using IIT Kharagpur’s Vlab system since last year as a platform to performs our virtual lab.
 Therfore we come up with an idea for our own university Vlab platform.
-incorporate various features as:
+
 
 
 ## Table of contents
@@ -29,13 +29,17 @@ incorporate various features as:
 1) Front page of  website
 ![alt text]()
 
-2) 
+2) List of Experiments
 ![alt text]()
 
-3)
+5) Procedure tab of Experiment
 ![alt text]()
 
+3) Theory tab of Experiment
+![alt text]()
 
+4) Simulation tab of Experiment
+![alt text]()
 
 
 
@@ -69,10 +73,10 @@ incorporate various features as:
 
 ## Features
 List of features are
-• We aim at providing an exclusive Vlab system synced with google classroom for the AMU.
-• It will include virtual labs for all basic engineering disciplines.
-• Students will be able to learn, download material, and perform all their departmental practicals.
-• They will be notified of their upcoming events, like graded lab quizzes that can be organized for assessement purpose on our platform itself.
+* We aim at providing an exclusive Vlab system synced with google classroom for the AMU.
+* It will include virtual labs for all basic engineering disciplines.
+* Students will be able to learn, download material, and perform all their departmental practicals.
+* They will be notified of their upcoming events, like graded lab quizzes that can be organized for assessement purpose on our platform itself.  
 
 ## Status
 Project is: _in progress_
