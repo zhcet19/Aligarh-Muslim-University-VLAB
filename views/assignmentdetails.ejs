@@ -1,0 +1,61 @@
+<%- include ('./partials/header') %>
+
+<div clas="container">
+	<div class="row">
+		<div class="col-md-3">
+		 <p class="lead">
+			 AMU_VLAB
+		</p>
+		<div class="list-group">
+			<li class="list-group-item active">Info 1</li>
+			<li class="list-group-item">Info 2</li>
+			<li class="list-group-item">Info 3 </li>
+		</div>
+		</div>		
+	<div class="col-md-9">
+		<div class="thumbnail" >
+			<img class="img-responsive" src="<%= assignment.img %>" >
+	
+			<div class="caption-full">
+				
+				<h4>
+					<a><%=assignment.topic%></a>
+				</h4>
+				<p>
+					Max Marks Alloted:- <%=assignment. marks_alloted %>
+				</p>
+				 
+				  <form   method="POST" action="/assignment/<%=assignment._id %>?_method=DELETE">
+					<button class="btn btn-danger">
+						Delete
+					</button>
+				  </form>
+				
+						
+			</div>
+		
+		</div>
+		
+	</div>		
+
+	</div>
+	
+</div>
+<script>
+    var inps = document.getElementsByTagName('input');
+            
+            submitForm = function(expvalue){
+              alert(expvalue);
+              for(var j=0;j<inps.length;j++){
+                    inps[j].value = expvalue;
+                    
+                  }
+              document.getElementById('Fm').submit();
+         };
+  </script>
+<%- include ('./partials/footer') %>
+
+        
+          
+        
+            
