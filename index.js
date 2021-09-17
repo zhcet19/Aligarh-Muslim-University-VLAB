@@ -7,6 +7,7 @@ var multer= require('multer');
 var methodOverride = require("method-override");
 var app = express();
 var assignmentModel = require('./models/assignment');
+var submitassignmentModel=require('./models/submitassignment');
 const MONGODB_URL ='mongodb+srv://AMU_VLAB_ADMIN:ZVL1vxcOIdbJ2VkH@cluster0.5csqp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 mongoose.connect(MONGODB_URL, {useNewUrlParser: true, useUnifiedTopology: true});
 
@@ -25,21 +26,31 @@ var experiments  = [
 
 // app.use exps
 app.set("view engine", "ejs");
-var picPath = path.resolve(__dirname,'public'); 
-app.use(express.static(picPath));
+
+app.use(express.static(__dirname+"/public/"));
 app.use(methodOverride("_method"));
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false}));
 
 
-var storage = multer.diskStorage({ 
+var teacherstorage = multer.diskStorage({ 
     destination: (req, file, cb) => { 
-        cb(null, './public/uploads') 
+        cb(null, './public/uploads/teacher') 
     }, 
     filename: (req, file, cb) => { 
         cb(null, file.fieldname + '-' + Date.now()) 
     } 
 }); 
-var upload = multer({ storage: storage }); 
+var studentstorage = multer.diskStorage({ 
+  destination: (req, file, cb) => { 
+      cb(null, './public/uploads/students') 
+  }, 
+  filename: (req, file, cb) => { 
+      cb(null, file.fieldname + '-' + Date.now()) 
+  } 
+}); 
+
+var upload = multer({ storage: teacherstorage }); 
+var studentupload=multer({storage:studentstorage});
 app.use(function(req,res,next){
   if(!req.body["expvalue"])
     next();
@@ -87,7 +98,7 @@ assignmentModel.find({}, (err, items) => {
         } 
     }); 
 }); 
-// Uploading the image 
+// Uploading the assignment by teacher
 app.post('/assignment', upload.single('image'), (req, res, next) => { 
   
     var obj = { 
@@ -95,7 +106,7 @@ app.post('/assignment', upload.single('image'), (req, res, next) => {
         topic: req.body.topic, 
         marks_alloted: req.body.marks_alloted, 
 		last_date:req.body.last_date,
-        img: 'uploads/' + req.file.filename,
+        img: 'uploads/teacher/' + req.file.filename,
           
     } 
     assignmentModel.create(obj, (err, item) => { 
@@ -108,6 +119,35 @@ app.post('/assignment', upload.single('image'), (req, res, next) => {
         } 
     }); 
 }); 
+
+//Get request for assignments submitted by students
+
+// app.get('/submitassignment',(req, res) => { 
+  
+//   }); 
+
+
+// Submitting the assignment by student
+app.post('/submitassignment', studentupload.single('image'), (req, res, next) => { 
+  
+  var obj = { 
+      name:req.body.name,
+      enrollment_no:req.body.enrollment_no,
+      img: 'uploads/students/'+ req.file.filename,
+        
+  } 
+  submitassignmentModel.create(obj, (err, item) => { 
+      if (err) { 
+          console.log(err); 
+      } 
+      else { 
+          
+          res.redirect('/assignmentdetails'); 
+      } 
+  }); 
+}); 
+
+
 //Downloading the assignment
 app.get('/download/:id',(req,res)=>{  
      assignmentModel.find({_id:req.params.id},(err,item)=>{  
@@ -118,7 +158,8 @@ app.get('/download/:id',(req,res)=>{
             var path= __dirname+'/public/'+item[0].img;  
             res.download(path);  
          }  
-     })  
+     })
+       
 })  
 
 app.get("/assignment/:id", function(req, res){
@@ -129,6 +170,8 @@ app.get("/assignment/:id", function(req, res){
            res.render("assignmentdetails", {assignment:assignment});
        }
    })
+   
+   
 });
 
 app.delete("/assignment/:id", function(req, res){

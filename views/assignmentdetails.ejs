@@ -6,7 +6,7 @@
 		 <p class="lead">
 			 AMU_VLAB
 		</p>
-		<div class="list-group">
+		<div class="list-group">     
 			<li class="list-group-item active">Info 1</li>
 			<li class="list-group-item">Info 2</li>
 			<li class="list-group-item">Info 3 </li>
@@ -14,7 +14,7 @@
 		</div>		
 	<div class="col-md-9">
 		<div class="thumbnail" >
-			<img class="img-responsive" src="<%= assignment.img %>" >
+			<img class="img-responsive" src="/<%= assignment.img %>" >
 	
 			<div class="caption-full">
 				
@@ -33,11 +33,28 @@
 				
 						
 			</div>
-		
+			<form method="POST" action="/submitassignment"  enctype="multipart/form-data"> 
+				<div> 
+					<label for="name"><b style="color:red">Enter name</b></label> 
+					<input  type="text" id="name" name="name" value="" rows="4" cols="90" placeholder="Write something here..." required style="margin-left:20px;margin-bottom:10px"> 	
+				</div>
+				<div> 
+					<label for="enrollment_no"><b style="color:red">Enter Enrollment No</b></label> 
+					<input  type="text" id="enrollment_no" name="enrollment_no" value="" rows="4" cols="90" placeholder="Write something here..." required style="margin-left:20px;margin-bottom:10px"> 	
+				</div>
+				<div> <span><label for="image"><b style="color:red">Add my Assignment</b></label> 
+					<input type="file" id="image" name="image" value="" required> </span>
+				</div>
+
+				<div style="margin-left:300px">
+					<button type="submit" class="w3-button w3-theme">  Submit Assignment</button> 
+			   </div>
+		   </form>
 		</div>
 		
-	</div>		
+	</div>	
 
+	
 	</div>
 	
 </div>
