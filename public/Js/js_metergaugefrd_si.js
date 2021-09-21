@@ -1,7 +1,3 @@
-//Document Name:js_metergaugefrd.js
-//Created On:27-05-2016
-//Author:Sukriti
-
 //---------------------------------------------Metergauge1(Voltmeter)----------------------------------------------//
 $(document).ready(function () {
     s1 = [0];
@@ -45,7 +41,7 @@ $(document).ready(function () {
 
 var r, rs, rd, id, id1, vd, vr, rd;
 var vt = 0.026, n =1, vdo = 0.7;
-var isc = Math.pow(10, -12);//amp
+var isc = Math.pow(10, -12); //amp
 var table, clmns, vlt;
 var diodetype,diodevalue;
 //-------------------------------------------------- Simulation----------------------------------------------------------------//
@@ -69,7 +65,7 @@ function check() {
 // in amp
 
     var id1_is = Math.log(id1 / isc);
-
+    
     vd =n*vt * id1_is;// in volt diode voltage
     // document.getElementById("volt").value = vd.toPrecision(3);
     if (vr < vdo) {
