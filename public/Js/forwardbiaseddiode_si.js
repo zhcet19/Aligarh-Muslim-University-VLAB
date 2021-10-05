@@ -1,8 +1,3 @@
-//Document Name:frddiode.js
-//Created On:27-05-2016
-//Author:Sukriti
-
-
 var sliderVal;
 function sliderChange() {
     sliderVal = document.getElementById("vdc").value;
