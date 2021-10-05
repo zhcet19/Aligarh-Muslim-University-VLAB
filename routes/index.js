@@ -3,31 +3,26 @@ var router   = express.Router()
 var passport = require('passport');
 const middleWareObj = require('../middleware');
 var middleWare = require("../middleware")
-// var Teacher    = require("../models/Teacher")
-// var Student    = require("../models/Teacher")
 var User     = require("../models/user")
 
 
 
-// cheking authorization route.
+// home route
 router.get("/",middleWare.isLoggedIn, function (req, res) {
     res.render("home")
 });
 
-
+// Auth routes
 // REGISTER
 router.get("/register",function(req,res){
     res.render("register");
 });
 
-
-
 // register post
 // -------------
 router.post("/register", function(req,res){
 
-    var newUser = new User({username: req.body.username, type:req.body.user});
-    
+    var newUser = new User({username: req.body.username, type:req.body.user});    
     User.register(newUser,req.body.password, function(err,user){
         // the user will be the newly created user
         if(err){
@@ -43,11 +38,11 @@ router.post("/register", function(req,res){
 });
 
 
-
 // login 
 router.get("/login",function(req,res){
     res.render("login"); 
 });
+
 
 // login logic
 router.post("/login",passport.authenticate("local",{
@@ -66,6 +61,12 @@ router.get("/logout", function(req,res){
     req.logout();
     res.redirect("/login");
 });
+
+
+
+
+
+
 
 
 module.exports = router;
