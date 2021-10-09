@@ -93,13 +93,22 @@ router.post('/assignment',middleWare.isLoggedIn, upload.single('image'), (req, r
             console.log(err); 
         } 
         else { 
-            
+            req.flash("success" , "Successfuly added assignment ");
             res.redirect('/assignment'); 
         } 
     }); 
 }); 
 
-
+router.get('/submitassignment',(req, res) => { 
+    submitassignmentModel.find({}, (err, items) => { 
+            if (err) { 
+                console.log(err); 
+            } 
+            else { 
+                res.render('submittedassignment', { items: items }); 
+            } 
+        }); 
+    }); 
 
 // Submitting the assignment by student
 router.post('/submitassignment',middleWare.isLoggedIn, studentupload.single('image'), (req, res, next) => { 
@@ -115,8 +124,8 @@ router.post('/submitassignment',middleWare.isLoggedIn, studentupload.single('ima
             console.log(err); 
         } 
         else { 
-            
-            res.redirect('/assignmentdetails'); 
+            req.flash("success" , "Successfuly submitted assignment ");
+            res.redirect('/submitassignment'); 
         } 
     }); 
   }); 
@@ -134,5 +143,44 @@ router.get("/liveclass", middleWare.isLoggedIn,function (req, res) {
 router.get("/experiment1",middleWare.isLoggedIn, function (req, res) {
     res.render("experiments/experiment1");
 });
+
+//Downloading the assignment
+router.get('/download/:id',(req,res)=>{  
+    assignmentModel.find({_id:req.params.id},(err,item)=>{  
+        if(err){  
+            console.log(err)  
+        }   
+        else{  
+           var path= __dirname+'/public/'+item[0].img;  
+           res.download(path);  
+        }  
+    });
+      
+});  
+
+router.get("/assignment/:id", function(req, res){
+  assignmentModel.findById(req.params.id, function(err,assignment){
+      if(err){
+          res.redirect("/assignment");
+      } else {
+          res.render("assignmentdetails", {assignment:assignment});
+      }
+  })
+  
+  
+});
+
+router.delete("/assignment/:id", function(req, res){
+ 
+ assignmentModel.findByIdAndRemove(req.params.id, function(err){
+      if(err){
+          res.redirect("/assignment");
+      } else {
+          res.redirect("/assignment");
+      }
+  })
+
+});
+
   
 module.exports = router;

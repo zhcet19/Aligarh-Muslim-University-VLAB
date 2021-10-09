@@ -6,18 +6,18 @@
             </div>
             <div class="col-md-4">
 
-                <form action="/register", method="POST" style="padding-top: 100px ;">
-                    <h1 style="text-align:center">SignUp for VLAB</h1>
+                <form action="/register", method="POST" style="padding-top: 50px ;">
+                    <h1 style="text-align:center"><b>Signup for AMU VLAB</b></h1>
                     <div class="form-group">
                         <input class="form-control" type="text" name="username" placeholder="Username" required>
                     </div>
                     <div class="form-group">
                         <input class= "form-control" type="password" name="password"  placeholder="Password" required>
                     </div>
-                    
                     <div class="form-group">
-                        <label for="User Type"></label>
-                        <select name="user" id="utype">
+                        <label for="UserType"></label>
+                        <select name="user"id="UserType" class="form-control">
+                            <option selected>Choose UserType</option>
                             <option value="teacher">Teacher</option>
                             <option value="student">Student</option>
                         </select>
@@ -26,9 +26,11 @@
                     <div class="form-group">
                         <button class="btn btn-primary btn-lg btn-block">SIGN UP</button> 
                     </div>
+                    <div style="text-align:center">
+                        <a href="/login" class="pull-right">Already Joined</a>
+                    </div>
                 </form>     
-                <!-- <a href="/logi">Go Back</a>     -->
-                <a href="/login" class="pull-right">Already Joined</a>
+            
             </div>
       </div>
 </div>
