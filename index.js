@@ -10,7 +10,7 @@ var express              = require("express"),
     app                  = express(),
     assignmentModel      = require('./models/assignment'),
     submitassignmentModel=require('./models/submitassignment');
-
+    flash                = require('connect-flash');
 // auth imports
 var passport      = require('passport');
 var LocalStrategy = require('passport-local');
@@ -46,14 +46,12 @@ passport.deserializeUser(User.deserializeUser());
 // getting routes form routes dir
 app.use(indexPage);
 app.use(function(req,res,next){
-  res.locals.currentUser  =req.user;
-  // console.log(res.locals.currentUser);  
+  res.locals.currentUser =req.user;
   next();
 });
 
 
-
-// uplaoding assignment content
+// uploading assignment content
 var teacherstorage = multer.diskStorage({ 
     destination: (req, file, cb) => { 
         cb(null, './public/uploads/teacher') 
@@ -87,7 +85,11 @@ app.use(function(req,res,next){
 
 // assignment routes!
 app.use(assignmentPage)
-
+app.use(function(req,res,next){
+  res.locals.error = req.flash("error");
+  res.locals.success = req.flash("success");
+  next();
+});
 
 //Downloading the assignment
 app.get('/download/:id',(req,res)=>{  

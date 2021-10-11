@@ -77,6 +77,7 @@ router.get('/assignment',(req, res) => {
     }); 
     
 
+
 // Uploading the assignment by teacher
 router.post('/assignment',middleWare.isLoggedIn, upload.single('image'), (req, res, next) => { 
   
@@ -98,6 +99,7 @@ router.post('/assignment',middleWare.isLoggedIn, upload.single('image'), (req, r
         } 
     }); 
 }); 
+
 
 
 
