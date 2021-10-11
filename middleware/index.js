@@ -11,7 +11,12 @@ middleWareObj.isLoggedIn = function(req,res,next){
         // console.log("check if teacher is signed in isloggedin!!");
             return next();
     }
-    res.redirect("/login");
+    else
+    {
+        req.flash("error" , "You need to be logged in first to do so..");
+        res.redirect("/login");
+    }
+   
 }
 
 
