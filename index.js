@@ -92,7 +92,43 @@ app.use(function(req,res,next){
 // assignment routes!
 app.use(assignmentPage)
 
+//Downloading the assignment
+app.get('/download/:id',(req,res)=>{  
+  assignmentModel.find({_id:req.params.id},(err,item)=>{  
+      if(err){  
+          console.log(err)  
+      }   
+      else{  
+         var path= __dirname+'/public/'+item[0].img;  
+         res.download(path);  
+      }  
+  });
 
+});  
+
+app.get("/assignment/:id", function(req, res){
+assignmentModel.findById(req.params.id, function(err,assignment){
+    if(err){
+        res.redirect("/assignment");
+    } else {
+        res.render("assignmentdetails", {assignment:assignment});
+    }
+})
+
+
+});
+
+app.delete("/assignment/:id", function(req, res){
+
+assignmentModel.findByIdAndRemove(req.params.id, function(err){
+    if(err){
+        res.redirect("/assignment");
+    } else {
+        res.redirect("/assignment");
+    }
+})
+
+});
 
 
 mongoose.connection.on("connected", () => {

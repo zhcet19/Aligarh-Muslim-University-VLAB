@@ -1,0 +1,295 @@
+<%- include ('../../partials/header') %>
+
+    <h3> Theory</h3>
+    <div id="contents" class="font-normal">
+        <div class="experiment-objectives">
+            <h2>Objectives</h2>
+            <p>
+                <strong>After completing this experiment you will be able to:</strong>
+                </p><ul>
+      <li>How to identify different actors and use cases from a given problem statement</li>
+      <li>How to associate use cases with different types of relationships</li>
+      <li>How to draw a use-case diagram</li>
+    </ul>
+            <p></p>
+        </div>
+        <div class="experiment-duration">
+            <h2>Time Required</h2>
+            <p>
+                Around <strong>3.00</strong> hours
+            </p>
+        </div>
+        <hr class="dotted-line">
+    
+        <h2>Use case diagrams</h2>
+    
+    <p>
+    Use case diagrams belong to the category of behavioural diagram of UML diagrams.
+    Use case diagrams aim to present a graphical overview of the functionality 
+    provided by the system. It consists of a set of actions (referred to as use 
+    cases) that the concerned system can perform, one or more actors, and 
+    dependencies among them. 
+    </p>
+    
+    <h3>Actor</h3>
+    <p>
+    An actor can be defined as <a href="/isad/isad/3/references/">[1]</a> an object 
+    or set of objects, external to the system, which interacts with the system to 
+    get some meaningful work done. Actors could be human, devices, or even
+    other systems.
+    </p>
+    
+    <p>
+    For example, consider the case where a customer <em>withdraws cash</em> from an 
+    ATM. Here, customer is a human actor.
+    </p>
+    
+    <p>
+    Actors can be classified as below <a href="/isad/isad/3/references/">[2], [i]
+    </a>:
+    </p><ul>
+        <li>
+        <strong>Primary actor</strong>: They are principal users of the system, who
+        fulfill their goal by availing some service from the system. For example, a 
+        customer uses an ATM to withdraw cash when he needs it. A customer is the 
+        primary actor here.
+        </li>
+        <li>
+        <strong>Supporting actor</strong>: They render some kind of service to the 
+        system. "Bank representatives", who replenishes the stock of cash, is such 
+        an example. It may be noted that replenishing stock of cash in an ATM is not 
+        the prime functionality of an ATM.
+        </li>
+        </ul>
+    <p></p>
+    <p>    
+    In a use case diagram primary actors are usually drawn on the top left side of 
+    the diagram.
+    </p>
+    
+    <h3>Use Case</h3>
+    <p>
+    A use case is simply <a href="/isad/isad/3/references/">[1]</a> a 
+    functionality provided by a system.
+    </p>
+    <p>
+    Continuing with the example of the ATM, <em>withdraw cash</em> is a 
+    functionality that the ATM provides. Therefore, this is a use case. Other 
+    possible use cases includes, <em>check balance</em>, <em>change PIN</em>, 
+    and so on. 
+    </p>
+    <p>
+    Use cases include both successful and unsuccessful scenarios of user 
+    interactions with the system. For example, authentication of a customer by the 
+    ATM would fail if he enters wrong PIN. In such case, an error message is 
+    displayed on the screen of the ATM.
+    </p>
+    
+    <h3>Subject</h3>
+    <p>
+    Subject is simply <a href="/isad/isad/3/references/">[iii]</a> the 
+    system under consideration. Use cases apply to a subject. For example, an ATM
+    is a subject, having multiple use cases, and multiple actors interact with it.
+    However, one should be careful of external systems interacting with the subject
+    as actors.
+    </p>
+    
+    
+    <h2>Graphical Representation</h2>
+    
+    <p>
+    An actor is represented by a stick figure and name of the actor is written below 
+    it. A use case is depicted by an ellipse and name of the use case is written 
+    inside it. The subject is shown by drawing a rectangle. Label for the 
+    system could be put inside it. Use cases are drawn inside the rectangle, and 
+    actors are drawn outside the rectangle, as shown in figure - 01.
+    
+        <img class="diagram" alt="Use case diagram" style="display: block;" src="http://vlabs.iitkgp.ac.in/se/isad_static/isad/images/theory/03/use_case_1.png">
+    Figure - 01: A use case diagram for a book store
+    </p>
+    
+    
+    <h2>Association between Actors and Use Cases</h2>
+    
+    <p>
+    A use case is triggered by an actor. Actors and use cases are connected through 
+    binary associations indicating that the two communicates through message passing.
+    </p>
+    <p>
+    An actor must be associated with at least one use case. Similarly, a given use 
+    case must be associated with at least one actor. Association among the actors 
+    are usually not shown. However, one can depict the class hierarchy among actors.
+    </p>
+    
+    
+    <h2>Use Case Relationships</h2>
+    
+    <p>
+    Three types of relationships exist among use cases:
+    </p><ul>
+        <li>Include relationship</li>
+        <li>Extend relationship</li>
+        <li>Use case generalization</li>
+    </ul>
+    <p></p>
+    
+    <h3>Include Relationship</h3>
+    
+    <p>
+    Include relationships are used to depict common behaviour that are shared by 
+    multiple use cases. This could be considered analogous to writing functions in a 
+    program in order to avoid repetition of writing the same code. Such a function 
+    would be called from different points within the program.
+    </p>
+    
+    <h4>Example</h4>
+    <p>
+    For example, consider an email application. A user can send a new mail, reply to 
+    an email he has received, or forward an email. However, in each of these three 
+    cases, the user must be logged in to perform those actions. Thus, we could have 
+    a <em>login</em> use case, which is included by <em>compose mail</em>, 
+    <em>reply</em>, and <em>forward email</em> use cases. The relationship is shown 
+    in figure - 02.
+    
+    </p><center>
+        <img class="diagram" alt="Include relationship" src="http://vlabs.iitkgp.ac.in/se/isad_static/isad/images/theory/03/use_case_include.png">
+    Figure - 02: Include relationship between use cases
+    </center>
+    
+    <p></p>
+    
+    <h4>Notation</h4>
+    
+    <p>
+    Include relationship is depicted by a dashed arrow with a «include» 
+    stereotype from the including use case to the included use case.
+    </p>
+    
+    
+    <h3>Extend Relationship</h3>
+    
+    <p>
+    Use case extensions are used used to depict any variation to an existing use 
+    case. They are used to the specify the changes required when any assumption made
+    by the existing use case becomes false <a href="/3/references/">
+    [iv, v]</a>.
+    </p>
+    
+    <h4>Example</h4>
+    <p>
+    Let's consider an online bookstore. The system allows an authenticated user to 
+    buy selected book(s). While the order is being placed, the system also allows to  
+    specify any special shipping instructions 
+    <a href="/3/references/">[vii]</a>, for example, call the 
+    customer before delivery. This <em>Shipping Instructions</em> step is optional, 
+    and not a part of the main <em>Place Order</em> use case. Figure - 03 depicts 
+    such relationship.
+    
+    </p><center>
+        <img class="diagram" alt="Extend relationship" src="http://vlabs.iitkgp.ac.in/se/isad_static/isad/images/theory/03/use.png">
+    Figure - 03: Extend relationship between use cases
+    </center>
+    
+    <p></p>
+    
+    <h4>Notation</h4>
+    <p>
+    Extend relationship is depicted by a dashed arrow with a «extend» 
+    stereotype from the extending use case to the extended use case.
+    </p>
+    
+    
+    <h3>Generalization Relationship</h3>
+    
+    <p>
+    Generalization relationship are used to represent the inheritance between use 
+    cases. A derived use case specializes some functionality it has already 
+    inherited from the base use case.
+    </p>
+    
+    <h4>Example</h4>
+    
+    <p>
+    To illustrate this, consider a graphical application that allows users to draw 
+    polygons. We could have a use case <em>draw polygon</em>. Now, rectangle is a 
+    particular instance of polygon having four sides at right angles to each other. 
+    So, the use case <em>draw rectangle</em> inherits the properties of the use case 
+    <em>draw polygon</em> and overrides it's drawing method. This is an example of 
+    generalization relationship. Similarly, a generalization relationship exists 
+    between <em>draw rectangle</em> and <em>draw square</em> use cases. The 
+    relationship has been illustrated in figure - 04.
+    
+    </p><center>
+        <img class="diagram" alt="Generalization relationship" src="http://vlabs.iitkgp.ac.in/se/isad_static/isad/images/theory/03/use_case_generalize.png">
+    Figure - 04: Generalization relationship among use cases
+    </center>
+    
+    <p></p>
+    
+    <h4>Notation</h4>
+    <p>
+    Generalization relationship is depicted by a solid arrow from the specialized 
+    (derived) use case to the more generalized (base) use case.
+    </p>
+    
+    
+    <h2>Identifying Actors</h2>
+    
+    <p>
+    Given a problem statement, the actors could be identified by asking the 
+    following questions <a href="/isad/isad/3/references/">[2]</a>:
+    </p><ul>
+        <li>Who gets most of the benefits from the system? (The answer would lead to
+        the identification of the primary actor)</li>
+        <li>Who keeps the system working? 
+        (This will help to identify a list of potential users)</li>
+        <li>What other software / hardware does the system interact with?</li>
+        <li>Any interface (interaction) between the concerned system and any other 
+        system?</li>
+    </ul>
+    <p></p>
+    
+    
+    <h2>Identifying Use cases</h2>
+    
+    <p>
+    Once the primary and secondary actors have been identified, we have to find out
+    their goals i.e. what are the functionality they can obtain from the system. Any 
+    use case name should start with a verb like, "Check balance".
+    </p>
+    
+    
+    <h2>Guidelines for drawing Use Case diagrams</h2>
+    
+    <p>
+    Following general guidelines could be kept in mind while trying to draw a use 
+    case diagram <a href="/isad/isad/3/references/">[1]</a>:
+    </p><ul>
+        <li>Determine the system boundary</li>
+        <li>Ensure that individual actors have well-defined purpose</li>
+        <li>Use cases identified should let some meaningful work done by the actors
+        </li>
+        <li>Associate the actors and use cases -- there shouldn't be any 
+        actor or use case floating without any connection</li>
+        <li>Use include relationship to encapsulate common behaviour among use cases
+        , if any</li>
+    </ul>
+    <p>
+    
+    </p><p>
+    Also look at <a href="/isad/isad/3/references/">[ix]</a> for further tips.
+    </p>
+    </div>
+    
+    
+    </section>
+
+
+    </div>
+
+    <%- include ('../../partials/footer') %>
+
+
+
+
+    

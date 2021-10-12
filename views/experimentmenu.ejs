@@ -46,14 +46,14 @@
           <th>BASIC ELECTORINCS </th>
         </tr>
 
-        <%experiments.forEach( function(experiment){ %>
+        <%for(var i=1;i<=experiments.length;i++){ %>
           <tr>
             <td> 
-            
-                <a href="/index" id="exp"  style="color: black; text-decoration: none;"> <%=experiment %> </a> 
+               
+                <a href="index/<%=i%>" id="exp"  style="color: black; text-decoration: none;"> <%=experiments[i-1]%> </a> 
           </td>
           </tr>
-          <% }) %>     
+          <% } %>     
          
         </table>
     </div>
@@ -62,14 +62,14 @@
     <div class="coc pt-5" style="padding-top: 100">
       <table class="col-8 container-fluid">
         <tr>
-          <th><b>COMPUTER ENGINEERING <b></th>
+          <th><b>SOFTWARE ENGINEERING <b></th>
         </tr>
         <tr>
-          <td> <a href="/index" style="color: black; text-decoration: none;">1. COMPUTER LAB 1 </a></td>
+          <td> <a href="/index/10" style="color: black; text-decoration: none;">1.Estimation of Project Metrics </a></td>
 
         </tr>
         <tr>
-          <td> <a href="/index" style="color: black; text-decoration: none;">2. COMPUTER LAB 2 </a></td>
+          <td> <a href="/index/11" style="color: black; text-decoration: none;">2.Modeling UML Use Case Diagrams and Capturing Use Case Scenarios </a></td>
 
         </tr>
         <tr>

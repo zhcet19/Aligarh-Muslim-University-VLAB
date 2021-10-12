@@ -45,26 +45,140 @@ var experiments  = [
     "8. Studies on BJT CE Amplifier",
     "9. RC Frequency Response"
     ]
-
+    
 router.get("/experiment",middleWare.isLoggedIn, function (req, res) {
+
     res.render("experimentmenu" , {experiments :experiments });
 });
 
-router.get("/index",middleWare.isLoggedIn, function (req, res) {
-    res.render("experimentindex");
+router.get("/index/:number",middleWare.isLoggedIn, function (req, res) {
+    var experimentnumber=req.params.number;
+    res.render("experimentindex",{experimentnumber:experimentnumber});
   });
   
-
-router.get("/theory",middleWare.isLoggedIn, function (req, res) {
-  res.render("experimenttheory");
+// Experiments 
+router.get("/theory1",middleWare.isLoggedIn, function (req, res) {
+  res.render("experiments/experiment1/theory");
 });
 
-
-router.get("/procedure", middleWare.isLoggedIn, function (req, res) {
-  res.render("experimentprocedure");
+router.get("/procedure1", middleWare.isLoggedIn, function (req, res) {
+  res.render("experiments/experiment1/procedure");
 });
 
+router.get("/simulation1",middleWare.isLoggedIn, function (req, res) {
+    res.render("experiments/experiment1/simulation");
+});
+router.get("/theory2",middleWare.isLoggedIn, function (req, res) {
+    res.render("experiments/experiment2/theory");
+  });
+  
+  router.get("/procedure2", middleWare.isLoggedIn, function (req, res) {
+    res.render("experiments/experiment2/procedure");
+  });
+  
+  router.get("/simulation2",middleWare.isLoggedIn, function (req, res) {
+      res.render("experiments/experiment2/simulation");
+  });
+  router.get("/theory3",middleWare.isLoggedIn, function (req, res) {
+    res.render("experiments/experiment3/theory");
+  });
+  
+  router.get("/procedure3", middleWare.isLoggedIn, function (req, res) {
+    res.render("experiments/experiment3/procedure");
+  });
+  
+  router.get("/simulation3",middleWare.isLoggedIn, function (req, res) {
+      res.render("experiments/experiment3/simulation");
+  });
+  router.get("/theory4",middleWare.isLoggedIn, function (req, res) {
+    res.render("experiments/experiment4/theory");
+  });
+  
+  router.get("/procedure4", middleWare.isLoggedIn, function (req, res) {
+    res.render("experiments/experiment4/procedure");
+  });
+  
+  router.get("/simulation4",middleWare.isLoggedIn, function (req, res) {
+      res.render("experiments/experiment4/simulation");
+  });
+  router.get("/theory5",middleWare.isLoggedIn, function (req, res) {
+    res.render("experiments/experiment5/theory");
+  });
+  
+  router.get("/procedure5", middleWare.isLoggedIn, function (req, res) {
+    res.render("experiments/experiment5/procedure");
+  });
+  
+  router.get("/simulation5",middleWare.isLoggedIn, function (req, res) {
+      res.render("experiments/experiment5/simulation");
+  });
+  router.get("/theory6",middleWare.isLoggedIn, function (req, res) {
+    res.render("experiments/experiment6/theory");
+  });
+  
+  router.get("/procedure6", middleWare.isLoggedIn, function (req, res) {
+    res.render("experiments/experiment6/procedure");
+  });
+  
+  router.get("/simulation6",middleWare.isLoggedIn, function (req, res) {
+      res.render("experiments/experiment6/simulation");
+  });
+  router.get("/theory7",middleWare.isLoggedIn, function (req, res) {
+    res.render("experiments/experiment7/theory");
+  });
+  
+  router.get("/procedure7", middleWare.isLoggedIn, function (req, res) {
+    res.render("experiments/experiment7/procedure");
+  });
+  
+  router.get("/simulation7",middleWare.isLoggedIn, function (req, res) {
+      res.render("experiments/experiment7/simulation");
+  });
+  router.get("/theory8",middleWare.isLoggedIn, function (req, res) {
+    res.render("experiments/experiment8/theory");
+  });
+  
+  router.get("/procedure8", middleWare.isLoggedIn, function (req, res) {
+    res.render("experiments/experiment8/procedure");
+  });
+  
+  router.get("/simulation8",middleWare.isLoggedIn, function (req, res) {
+      res.render("experiments/experiment8/simulation");
+  });
+  router.get("/theory9",middleWare.isLoggedIn, function (req, res) {
+    res.render("experiments/experiment9/theory");
+  });
+  
+  router.get("/procedure9", middleWare.isLoggedIn, function (req, res) {
+    res.render("experiments/experiment9/procedure");
+  });
+  
+  router.get("/simulation9",middleWare.isLoggedIn, function (req, res) {
+      res.render("experiments/experiment9/simulation");
+  });
 
+  router.get("/theory10",middleWare.isLoggedIn, function (req, res) {
+    res.render("experiments/experiment10/theory");
+  });
+  
+  router.get("/procedure10", middleWare.isLoggedIn, function (req, res) {
+    res.render("experiments/experiment10/procedure");
+  });
+  
+  router.get("/simulation10",middleWare.isLoggedIn, function (req, res) {
+      res.render("experiments/experiment10/simulation");
+  });
+  router.get("/theory11",middleWare.isLoggedIn, function (req, res) {
+    res.render("experiments/experiment11/theory");
+  });
+  
+  router.get("/procedure11", middleWare.isLoggedIn, function (req, res) {
+    res.render("experiments/experiment11/procedure");
+  });
+  
+  router.get("/simulation11",middleWare.isLoggedIn, function (req, res) {
+      res.render("experiments/experiment11/simulation");
+  });
 router.get('/assignment',(req, res) => { 
     assignmentModel.find({}, (err, items) => { 
             if (err) { 
@@ -140,47 +254,9 @@ router.get("/liveclass", middleWare.isLoggedIn,function (req, res) {
     res.render("experimentliveclass");
 });
   
-router.get("/experiment1",middleWare.isLoggedIn, function (req, res) {
-    res.render("experiments/experiment1");
-});
 
-//Downloading the assignment
-router.get('/download/:id',(req,res)=>{  
-    assignmentModel.find({_id:req.params.id},(err,item)=>{  
-        if(err){  
-            console.log(err)  
-        }   
-        else{  
-           var path= __dirname+'/public/'+item[0].img;  
-           res.download(path);  
-        }  
-    });
-      
-});  
 
-router.get("/assignment/:id", function(req, res){
-  assignmentModel.findById(req.params.id, function(err,assignment){
-      if(err){
-          res.redirect("/assignment");
-      } else {
-          res.render("assignmentdetails", {assignment:assignment});
-      }
-  })
-  
-  
-});
 
-router.delete("/assignment/:id", function(req, res){
- 
- assignmentModel.findByIdAndRemove(req.params.id, function(err){
-      if(err){
-          res.redirect("/assignment");
-      } else {
-          res.redirect("/assignment");
-      }
-  })
-
-});
 
   
 module.exports = router;

@@ -1,0 +1,105 @@
+<%- include ('../../partials/header') %>
+
+    <h3> Theory</h3>
+    <div class="content" id="experiment-article-section-1-content">  
+        <b>Objective</b><br><br>
+        <ol>
+            At the end of the experiment, the student will be able to
+            <li>Explain the function of a Zener diode</li>
+            <!--<li>   Explain the V-I characteristics of a Zener Diode</li>-->
+            <li>Explain Zener Diode as Voltage Regulator</li>
+
+        </ol><br><br>
+        <b>Zener Diode</b><br><br>
+        <p style="text-align:justify">  A Zener Diode is a special kind of diode which permits current to flow in the forward direction as normal, 
+            but will also allow it to flow in the reverse direction when the voltage is above the breakdown voltage or ‘zener’ voltage.
+            Zener diodes are designed so that their breakdown voltage is much lower - for example just 2.4 Volts.</p>
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ac.in/be/exp10/image/zenerdi3.png" style="width:350px;height:100px">
+            </p><br>
+            Figure:1
+        </div><br><br>
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ac.in/be/exp10/image/zenerdi2.png" style="width:350px;height:100px">
+            </p><br>
+            Figure:2
+        </div><br><br>
+        <b>Function of Zener Diode</b><br><br>
+        <ol>
+            <li>Zener diodes are a special kind of diode which permits current to flow in the forward direction.</li>
+            <li>Zener diodes will also allow current to flow in the reverse direction when the voltage is above a certain value. 
+                This breakdown voltage is known as the Zener voltage. In a standard diode, the Zener voltage is high, and the diode is permanently damaged
+                if a reverse current above that value is allowed to pass through it.</li>
+            <li>In the reverse bias direction, there is practically no reverse current flow until the breakdown voltage is reached. When this occurs there is a sharp increase in reverse current. Varying amount of reverse current can pass through the diode without damaging it. The breakdown voltage or zener voltage (\(V_Z\)) across the diode remains relatively constant.&nbsp;
+            </li>
+        </ol><br><br>
+
+        <b>Zener Diode As A Voltage Regulator</b><br><br>
+        <p style="text-align:justify"> A voltage regulator is an electronic circuit that provides a stable DC voltage independent of the load current, temperature and AC line voltage variations.   
+            A Zener diode of break down voltage \(V_Z\)&nbsp;is reverse connected to an input voltage source \(V_I\)&nbsp;across a load resistance \(R_L\)&nbsp;and a series resistor \(R_S\). The voltage across the zener will remain steady at its break down voltage \(V_Z\)&nbsp;for all the values of zener current \(I_Z\)
+            &nbsp;as long as the current remains in the break down region. Hence a regulated DC output voltage \(V_0&nbsp;= V_Z\)&nbsp;is obtained across
+            \(R_L\), whenever the input voltage remains within a minimum and maximum voltage.
+            Basically there are two type of regulations such as:<br>
+            <b>Line Regulation</b>:&nbsp;In this type of regulation, series resistance and load resistance are fixed, only input voltage is changing. Output voltage remains the same as long as the input voltage is maintained above a minimum value.
+            <br>  <b> Load Regulation</b>:&nbsp;In this type of regulation, input voltage is fixed and the load resistance is varying. Output volt remains same, as long as the load resistance is maintained above a minimum value.
+        </p><br>
+        <b>Line Regulation</b><br><br>
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ac.in/be/exp10/image/zenerdli.png" style="width:300px;height:200px">
+            </p><br>
+            Figure:3
+        </div><br><br>
+        In Line Regulation, Load resistance is constant and input voltage varies. \(V_I\) must be sufficiently large to turn the Zener Diode ON.   <br> 
+
+        $$V_L = V_Z= \frac{V_{Imin} \times R_L}{(R_S + R_L)}$$ <br> 
+
+        So, the minimum turn-on voltage \(V_{Imin}\) is :   <br> 
+
+        $$  V_{Imin}= \frac{V_Z \times (R_S + R_L)}{R_L}$$<br>   <br> 
+        The maximum value of \(V_I\) is limited by the maximum zener current \(I_{Zmax}\)   <br> 
+        $$I_{Rmax}= I_{Zmax} + I_L $$<br> <br> 
+        \(I_L\) is fixed at :   <br> 
+        $$\frac{V_Z}{R_L}  \qquad  Since, V_L=V_Z $$<br> <br> 
+        So maximum \(V_I\) is   <br> 
+        $$  V_{Imax} =  V_{Rmax} + V_Z$$ <br> 
+        <p style="position: absolute; left:45%;">   or,  </p> <br> 
+        $$V_{Imax} = I_{Rmax} \times R + V_Z$$ <br>  <br> 
+        For \(V_I &lt; V_Z\),   <br> 
+        $$ V_O= V_I$$<br>  <br> 
+        For \(V_I &gt; V_Z\),   <br> 
+        $$ V_O = V_I − I_S \times R_S$$  <br>    <br> 
+
+        <br>   <b>Load Regulation</b><br><br>
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ac.in/be/exp10/image/zenerdlo.png" style="width:300px;height:200px">
+            </p><br>
+            Figure:4
+        </div><br><br>
+        In Load Regulation , input voltage is constant and Load resistance varies. Too small a Load Resistance \(R_L\) ,will result in \(V_{Th} &lt; V_Z\) and Zener Diode will be OFF.   <br> 
+        $$V_L = V_Z = \frac{V_{Imin} \times R_L}{(R_S + R_L)}$$<br> <br> 
+
+        So the minimum load resistance \(R_L\)  <br> 
+        $$R_{Lmin} = \frac{V_Z  \times R_S}{V_I− V_Z}$$ <br> <br>
+        Any load resistance greater than \(R_{Lmin}\) will make Zener Diode ON   <br> 
+        $$ I_S  = I_L + I_Z$$ <br>  <br> 
+       \(R_{Lmin}\) will establish maximum \(I_L\) as    <br> 
+        $$I_{Lmax}=\frac{V_L}{R_{Lmin}}= \frac{V_Z}{R_{Lmin}} \qquad  Since, V_L=V_Z$$<br>  <br> 
+
+        \(V_S\)is the voltage drop across \(R_S\) <br> 
+        $$V_S = V_{Imin} - V_Z$$ <br> 
+        $$I_S = \frac{V_{Imin}− V_Z}{R_S}$$<br><br> 
+        For \(R_L\) &lt; \(R_{Lmin}\),   <br> 
+        $$V_O= V_I$$ <br>  <br> 
+        For \(R_L\) &gt; \(R_{Lmin}\),   <br> 
+        $$V_O = V_I − I_S \times R_S$$ <br> <br>                      
+    </div>
+    </section>
+
+
+    </div>
+
+    <%- include ('../../partials/footer') %>

@@ -1,0 +1,192 @@
+<%- include ('../../partials/header') %>
+
+    <h3> Theory</h3>
+    <div class="content" id="experiment-article-section-1-content">
+        <b>Objectives</b><br><br>
+        At the end of the module the student would be able to
+        <ol>   
+            <li>Explain Rectification</li>
+            <li>Explain Half Wave Rectification</li>
+            <li>Explain Half Wave Rectification:For Positive Half Cycle</li>
+            <li>Explain Half Wave Rectification:For Negative Half Cycle</li>
+        </ol><br><br>
+
+        <b>Rectification</b><br>
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ernet.in/be/exp6/image/halfwaverc.png" style="width:700px;height:140px">
+            </p><br>
+            Figure:4
+        </div><br><br>
+        <p style="text-align:justify"> A rectifier is a device that converts alternating current (AC) to direct current (DC), a process known as rectification. Rectifiers are essentially of two types – a half wave rectifier and a full wave rectifier.</p><br><br>
+
+        <b>Half Wave Rectification</b><br><br>      
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ernet.in/be/exp6/image/halfwvrecpn.png" style="width:600px;height:300px">
+            </p><br>
+            Figure:3
+        </div><br><br>
+        <p style="text-align:justify">On the positive cycle the diode is forward biased and on the negative cycle the diode is reverse biased. By using a diode we have converted an AC source into a pulsating DC source. In summary we have ‘rectified’ the AC signal.</p><br><br>
+        <br>
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ernet.in/be/exp6/image/halfwave.png" style="width:350px;height:250px">
+            </p><br>
+            Figure:5
+        </div><br><br>
+        <p style="text-align:justify">The simplest kind of rectifier circuit is the half-wave rectifier.The half-wave rectifier is a circuit that allows only part of an input signal to pass. The circuit is simply the combination of a single diode in series with a resistor, where the resistor is acting as a load.</p><br>
+
+        <b>Half Wave Rectifiers – Waveforms</b><br><br>
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ernet.in/be/exp6/image/halfwv1.png" style="width:460px;height:170px">
+            </p>
+            <p>
+                <img src="http://vlabs.iitkgp.ernet.in/be/exp6/image/halfwv2.png" style="width:460px;height:170px">
+            </p><br>
+            Figure:6
+        </div>
+        <p>The output DC voltage of a half wave rectifier can be calculated with the following two ideal equations.</p><br>
+        $$V_{peak}=V_{rms} \times √2$$<br>
+        $$V_{dc}=\frac{V_{peak}}{Π}$$<br><br>
+        <b>Half Wave Rectification:For Positive Half Cycle </b><br><br>
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ernet.in/be/exp6/image/halfwvrecp.png" style="width:600px;height:200px">
+            </p><br>
+            Figure:1
+        </div><br><br>
+        <p>Diode is forward biased, acts as a short circuit, passes the waveform through.</p><br><br>
+        For positive half cycle:
+        $$V_I - V_b - I \times r_d - I \times R=0$$
+        where,<br>
+        \(V_I\) is the input voltage,<br>
+        \(V_b\) is barrier potential,<br>
+        \(r_d\) is diode resistance,<br>
+        \(I\) is total current,<br>
+        \(R\) is resistance<br>
+        $$I=\frac{V_I  - V_b}{r_d + R}$$<br>
+        $$V_O = I \times R$$<br>
+        $$V_O =\frac{V_I  - V_b}{r_d + R} \times R$$<br>
+        For \(r_d\)&lt;&lt; \(R\),<br>
+
+        $$V_O = V_I- V_b$$<br>
+
+        \(V_b\) is 0.3 for Germanium ,<br>
+        \(V_b\) is 0.7 for Silicon<br><br>
+
+        For \(V_I\)&lt;\(V_b\),<br><br>
+        The diode will remain OFF.The Output voltage will be,<br>
+
+        $$V_O =0$$<br>
+
+        For \(V_I\)&gt;\(V_b\),<br><br>
+        The diode will be ON.The Output voltage will be,<br>
+
+        $$V_O = V_I- V_b$$<br><br>
+        <!--  <div align="center">
+             <p>
+                 <img src="image/half2.png" style="width:600px;height:300px">
+             </p><br>
+             Figure:2
+         </div><br><br>-->
+        <b> Half Wave Rectification:For Negative Half Cycle</b>    
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ernet.in/be/exp6/image/halfwvrecn.png" style="width:600px;height:200px">
+            </p><br>
+            Figure:2
+        </div><br><br>
+        <p>Diode is reverse biased, acts as a open circuit, does not pass the waveform through.</p><br><br>
+        For negative half cycle:<br>
+        $$V_O=0 \quad Since, \quad I =0$$<br>
+        <b> Half wave Rectification:For an Ideal Diode</b><br><br>
+        For Ideal Diode,<br>
+
+        $$V_b = 0$$<br>
+
+        For positive half cycle,<br>
+
+        $$V_O = V_I$$<br>
+
+        For negative half cycle,<br>
+
+        $$V_O = 0$$<br>
+
+        <b>Average output voltage</b><br><br>
+
+        $$V_O=V_m \times \sin wt  \quad for \quad 0 \leq  wt \leq \pi$$<br>
+
+        $$V_O=0  \quad for \quad \pi \leq  wt \leq 2 \pi$$<br>
+
+        $$V_{av}=\frac{V_m}{\pi}  =0.318V_m$$<br>
+
+        <b>RMS load voltage</b><br><br>
+
+        $$V_{rms}=I_{rms} \times R = \frac {V_m}{2}$$<br>
+
+
+        <b>Average load current</b><br><br>
+
+        $$I_{av}=\frac{V_{av}}{R}
+        =\frac{\frac{V_m}{\pi}}{R}$$<br>
+
+        $$I_{av}=\frac{V_{m}}{\pi \times R}=\frac{I_m}{\pi}$$<br>
+
+        <b> RMS load current</b><br><br>
+
+        $$I_{rms}=\frac {I_m}{2}$$<br>
+        <b>Form factor</b>: It is defined as the ratio of rms load voltage and average load voltage.<br>
+
+        $$F.F= \frac{V_{rms}}{V_{av}}$$<br>
+        $$F.F= \frac{\frac{V_{m}}{2}}{\frac{V_{av}}{2}}=\frac{\pi}{2}=1.57$$<br>
+
+        \(F.F \geq 1\)<br>
+
+        \(rms \geq  av\)<br><br>
+        <b>Ripple Factor</b><br><br>
+        $$\gamma=√({F.F}^2-1 \times 100\%$$<br>
+        $$\gamma=√({1.57}^2-1) \times 100\%=1.21\%$$<br>
+        <b>Efficiency</b>:It is defined as ratio of dc power available at the load to the input ac power.<br>
+
+        $$n\%=\frac{P_{load}}{P_{in}} \times 100\%$$<br>
+
+        $$n\%=\frac {{I_{dc}^2} \times R}{{I_{rms}^2} \times R}\times 100\%$$<br>
+
+$$n\%=\frac{\frac {I_{m}^2}{\pi^2}}{\frac{I_{m}^2}{4}}\times 100\%=\frac{4}{\pi^2}\times 100\% =40.56 \%$$<br><br>
+
+        <!--<div align="center">
+           <p>
+               <img src="image/half4.png" style="width:600px;height:300px">
+           </p><br>
+           Figure:4
+       </div><br><br>-->
+
+
+
+
+        <b>Peak Inverse Volatge</b><br><br>
+        <p style="text-align:justify">   For rectifier applications, peak inverse voltage (PIV) or peak reverse voltage (PRV) 
+            is the maximum value of reverse voltage which occurs at the peak of the input cycle 
+            when the diode is reverse-biased.The portion of the sinusoidal waveform which repeats or duplicates itself is known as the cycle. 
+            The part of the cycle above the horizontal axis is called the positive half-cycle, the part of the cycle below 
+            the horizontal axis is called the negative half cycle. With reference to the amplitude of the cycle, 
+            the peak inverse voltage is specified as the maximum negative value of the sine-wave within a cycle's negative half cycle.</p><br><br>
+        $$ PIV=V$$<br>
+
+        $$  -V_m +V=0 \Rightarrow V=V_m$$<br>
+
+        $$PIV \geq V_m$$<br><br>
+                
+    </div>
+    </section>
+
+
+    </div>
+
+    <%- include ('../../partials/footer') %>
+
+
+
+
