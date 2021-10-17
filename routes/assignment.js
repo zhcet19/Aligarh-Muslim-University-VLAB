@@ -123,6 +123,21 @@ router.get("/theory2",middleWare.isLoggedIn, function (req, res) {
   router.get("/simulation6",middleWare.isLoggedIn, function (req, res) {
       res.render("experiments/experiment6/simulation");
   });
+  router.get("/simulation6.1",middleWare.isLoggedIn, function (req, res) {
+    res.render("experiments/experiment6/part1");
+});
+
+router.get("/simulation6.2",middleWare.isLoggedIn, function (req, res) {
+  res.render("experiments/experiment6/part2");
+});
+router.get("/simulation7.1",middleWare.isLoggedIn, function (req, res) {
+  res.render("experiments/experiment7/part1");
+});
+
+router.get("/simulation7.2",middleWare.isLoggedIn, function (req, res) {
+res.render("experiments/experiment7/part2");
+});
+
   router.get("/theory7",middleWare.isLoggedIn, function (req, res) {
     res.render("experiments/experiment7/theory");
   });
@@ -156,7 +171,13 @@ router.get("/theory2",middleWare.isLoggedIn, function (req, res) {
   router.get("/simulation9",middleWare.isLoggedIn, function (req, res) {
       res.render("experiments/experiment9/simulation");
   });
-
+  router.get("/simulation9.1",middleWare.isLoggedIn, function (req, res) {
+    res.render("experiments/experiment9/part1");
+  });
+  
+  router.get("/simulation9.2",middleWare.isLoggedIn, function (req, res) {
+  res.render("experiments/experiment9/part2");
+  });
   router.get("/theory10",middleWare.isLoggedIn, function (req, res) {
     res.render("experiments/experiment10/theory");
   });
