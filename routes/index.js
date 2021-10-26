@@ -7,6 +7,7 @@ var User     = require("../models/user")
 
 
 
+
 // home route
 router.get("/",middleWare.isLoggedIn, function (req, res) {
   

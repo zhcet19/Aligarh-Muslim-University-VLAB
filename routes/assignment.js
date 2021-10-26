@@ -267,9 +267,7 @@ router.post('/submitassignment',middleWare.isLoggedIn, studentupload.single('ima
   
 
 
-router.get("/quiz",middleWare.isLoggedIn, function (req, res) {
-    res.render("experimentquiz");
-});
+
   
 router.get("/liveclass", middleWare.isLoggedIn,function (req, res) {
     res.render("experimentliveclass");

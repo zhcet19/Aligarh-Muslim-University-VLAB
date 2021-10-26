@@ -1,0 +1,40 @@
+<%- include ('./partials/header') %>
+	<div>
+		<div>
+			
+				<form action="/addquiz" method="post" >
+					<div>
+						<label ><b style="color: red">Question</b></label>
+						<input type="text" name="question"  placeholder="Type your question" 
+							required style="margin-left: 20px; margin-bottom: 10px" rows="4" cols="90" />
+					</div>
+					<div>
+						<p>Please enter your options:</p>
+                        <input type="text"  placeholder="Type option1"  name="option1"
+							required style="margin-left: 20px; margin-bottom: 10px" />
+                            <input type="text"  placeholder="Type option2"  name="option2"
+							required style="margin-left: 20px; margin-bottom: 10px" />
+                            <input type="text"  placeholder="Type option3"  name="option3"
+							required style="margin-left: 20px; margin-bottom: 10px" />
+                            <input type="text"  placeholder="Type option4"  name="option4"
+							required style="margin-left: 20px; margin-bottom: 10px" />
+                    
+					</div>
+					<div>
+						<label ><b style="color: red">Enter the correct option </b></label>
+
+						<input type="number"  name="answer" rows="4" cols="90"
+							placeholder="Write something here..." required
+							style="margin-left: 20px; margin-bottom: 10px" />
+					</div>
+					
+					<input type="submit" class="btn btn-success" value="Post Quiz">
+                
+					
+				</form>
+			
+		</div>
+		
+		</div>
+	
+	<%- include ('./partials/footer') %>

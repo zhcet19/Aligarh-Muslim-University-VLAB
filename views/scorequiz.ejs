@@ -1,0 +1,32 @@
+<%- include ('./partials/header') %>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 score">
+            <h2 class="text-center">Your Score Card</h2>
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Total Questions</th>
+                    <th>Correct </th>
+                    <th>Incorrect </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="success">
+                    <td><%= total %></td>
+                    <td><%= score %></td>
+                    <td><%= wrong %></td>
+                  </tr>
+                </tbody>
+            </table>
+            <a href="/quiz" class="btn btn-warning pull-left">Play Again</a>
+        </div>
+        
+    </div>
+</div>
+<%- include ('./partials/footer') %>
+
+        
+          
+        
+            

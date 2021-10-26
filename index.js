@@ -2,7 +2,8 @@ var express              = require("express"),
     bodyParser           = require("body-parser"),
     mongoose             = require("mongoose"),
     indexPage            = require("./routes/index"),
-    assignmentPage           = require("./routes/assignment")
+    assignmentPage       = require("./routes/assignment")
+    quizPage             = require("./routes/quiz")
     path                 = require('path'),
     fs                   = require('fs'),
     multer               = require('multer'),
@@ -10,6 +11,7 @@ var express              = require("express"),
     app                  = express(),
     assignmentModel      = require('./models/assignment'),
     submitassignmentModel=require('./models/submitassignment');
+    quizModel            =require('./models/quiz');
     flash                = require("connect-flash");
 
 // auth imports
@@ -130,6 +132,7 @@ assignmentModel.findByIdAndRemove(req.params.id, function(err){
 
 });
 
+app.use(quizPage);
 
 mongoose.connection.on("connected", () => {
   console.log("connected");
