@@ -5,9 +5,6 @@ const middleWareObj = require('../middleware');
 var middleWare = require("../middleware")
 var User     = require("../models/user")
 
-
-
-
 // home route
 router.get("/",middleWare.isLoggedIn, function (req, res) {
   
@@ -25,7 +22,7 @@ router.get("/register",function(req,res){
 // -------------
 router.post("/register", function(req,res){
 
-    var newUser = new User({username: req.body.username, type:req.body.user});    
+    var newUser = new User({username: req.body.username, type:req.body.user, enroll:req.body.enroll});    
     User.register(newUser,req.body.password, function(err,user){
         // the user will be the newly created user
         if(err){
@@ -66,6 +63,7 @@ router.get("/logout", function(req,res){
     req.logout();
     req.flash("success","You logged out successfully !");
     res.redirect("/login");
+
 });
 
 

@@ -3,53 +3,78 @@
 <div clas="container">
 	<div class="row">
 		<div class="col-md-3">
+			<% if(currentUser.type=="teacher"){ %>
 		 <p class="lead">
-			 AMU_VLAB
+			 Submitted Works
+			 <div class="list-group">  
+			 <%items.forEach( function(item){%>
+			
+			   
+				<li class="list-group-item"><%=item.name%>
+				<hr>
+				<%=item.created%>
+				<a href='<%=item.image%>'>View Work</a>
+				</li>
+				<!-- <li class="list-group-item">Info 2</li> -->
+				<!-- <li class="list-group-item">Info 3 </li> -->
+				<br>
+				
+			 <%})%>
+			</div>
+			
 		</p>
-		<div class="list-group">     
-			<li class="list-group-item active">Info 1</li>
-			<li class="list-group-item">Info 2</li>
-			<li class="list-group-item">Info 3 </li>
-		</div>
+		<%}%>
+		
+		
 		</div>		
 	<div class="col-md-9">
 		<div class="thumbnail" >
 			<img class="img-responsive" src="/<%= assignment.img %>" >
 	
 			<div class="caption-full">
-				
 				<h4>
 					<a><%=assignment.topic%></a>
 				</h4>
 				<p>
 					Max Marks Alloted:- <%=assignment. marks_alloted %>
-				</p>
-				 
-				  <form   method="POST" action="/assignment/<%=assignment._id %>?_method=DELETE">
+				</p>	 
+				<% if(currentUser.type=="teacher"){ %>
+				  <form action="/assignment/<%=assignment._id %>?_method=DELETE"  method="POST">
 					<button class="btn btn-danger">
 						Delete
 					</button>
-				  </form>
-				
-						
+				  </form>		
+				<%}%>
+
 			</div>
-			<form method="POST" action="/submitassignment"  enctype="multipart/form-data"> 
+			<% if(currentUser.type=="student" ){ %>
+			
+			<form method="POST" action="/assignment/<%=assignment._id%>/submit"  enctype="multipart/form-data"> 
 				<div> 
-					<label for="name"><b style="color:red">Enter name</b></label> 
-					<input  type="text" id="name" name="name" value="" rows="4" cols="90" placeholder="Write something here..." required style="margin-left:20px;margin-bottom:10px"> 	
+					<!-- <label for="name"><b style="color:red">Enter name</b></label>  -->
+					<input  id="name" name="name" value='<%=currentUser.username%>' rows="4" cols="90" placeholder="Write something here..."  style="margin-left:20px;margin-bottom:10px; visibility: hidden;"> 	
 				</div>
 				<div> 
-					<label for="enrollment_no"><b style="color:red">Enter Enrollment No</b></label> 
-					<input  type="text" id="enrollment_no" name="enrollment_no" value="" rows="4" cols="90" placeholder="Write something here..." required style="margin-left:20px;margin-bottom:10px"> 	
+					<!-- <label for="enrollment_no"><b style="color:red">Enter Enrollment No</b></label>  -->
+					<input  id="enrollment_no" name='enrollment_no' value='<%=currentUser.enroll%>' rows="4" cols="90" placeholder="Write something here..." style="margin-left:20px;margin-bottom:10px; visibility: hidden;" > 	
 				</div>
-				<div> <span><label for="image"><b style="color:red">Add my Assignment</b></label> 
+
+				<div> <span><label for="image"><b style="color:red">Add my Assignment</b></label>            
+
+
 					<input type="file" id="image" name="image" value="" required> </span>
 				</div>
 
 				<div style="margin-left:300px">
 					<button type="submit" class="w3-button w3-theme">  Submit Assignment</button> 
 			   </div>
+
+			   <div>My Work</div>
+			   
+
+
 		   </form>
+		   <%}%>
 		</div>
 		
 	</div>	

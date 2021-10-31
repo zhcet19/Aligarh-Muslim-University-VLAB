@@ -46,8 +46,6 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-
-
 app.use(function(req,res,next){
   res.locals.currentUser  =req.user;
   res.locals.error = req.flash("error");
@@ -93,7 +91,6 @@ app.use(function(req,res,next){
 
 // assignment routes!
 app.use(assignmentPage)
-
 //Downloading the assignment
 app.get('/download/:id',(req,res)=>{  
   assignmentModel.find({_id:req.params.id},(err,item)=>{  
@@ -116,6 +113,13 @@ assignmentModel.findById(req.params.id, function(err,assignment){
         res.render("assignmentdetails", {assignment:assignment});
     }
 })
+
+app.use(function(req,res,next){
+  res.locals.error = req.flash("error");
+  res.locals.success = req.flash("success");
+  next();
+});
+
 
 
 });

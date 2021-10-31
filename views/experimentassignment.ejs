@@ -2,6 +2,7 @@
 	<div>
 		<div>
 			<% if(currentUser.type=="teacher" ){ %>
+				<!-- only show the assignment by this teacher -->
 				<form action="/assignment" method="POST" enctype="multipart/form-data">
 					<div>
 						<label for="subjectcode"><b style="color: red">Subject</b></label>
@@ -37,8 +38,13 @@
 						</button>
 					</div>
 				</form>
-			<%} else {%>
+			<%}%>
 		</div>
+
+		<div style="padding-top: 50px;"> 
+			<h1>Given Work</h1>
+		</div>
+		<!-- i need to list only the assignments created by this teacher -->
 		<% items.forEach(function(assignment) { %>
 			<div class="w3-container w3-card w3-white w3-round w3-margin">
 				<br />
@@ -46,28 +52,24 @@
 				<hr class="w3-clear" />
 				<h4 style="color: red">
 					<%= assignment.topic %>(<%= assignment.subjectcode %>)
+					<%=assignment._id%>
 				</h4>
 				<p style="color: green">
 					Max Marks Alloted :-<%= assignment.marks_alloted %>
 				</p>
 				<p style="color: green">Due Date :-<%= assignment.last_date %>
 				</p>
-				<div class="w3-row-padding" style="margin: 0 -16px">
-					<div class="w3-half">
-						<td>
-							<embed src="<%= assignment.img %>" width="100px" height="100px" />
-							<!-- <img src="<%= assignment.img %>" style="width:100px; height:100px;"> -->
-						</td>
-					</div>
-				</div>
+				<!-- removing the embedd from here as it is forcing the browser to download again and again-->
 				<button type="button" class="w3-button w3-theme-d2 w3-margin-bottom">
 					<i class="fa fa-comment"></i> Comment
 				</button>
+
 				<button>
 					<form action="/download/<%= assignment._id %>" method="GET">
 						<input type="submit" value="Download" />
 					</form>
 				</button>
+			
 				<a href="/assignment/<%=assignment._id %>" class="w3-button w3-theme-d2 w3-margin-bottom">
 					View details
 				</a>
@@ -75,5 +77,4 @@
 			</div>
 			<% }) %>
 		</div>
-	<%}%>
 	<%- include ('./partials/footer') %>
