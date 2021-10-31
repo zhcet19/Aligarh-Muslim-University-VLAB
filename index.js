@@ -2,7 +2,7 @@ var express              = require("express"),
     bodyParser           = require("body-parser"),
     mongoose             = require("mongoose"),
     indexPage            = require("./routes/index"),
-    assignmentPage           = require("./routes/assignment")
+    assignmentPage       = require("./routes/assignment")
     path                 = require('path'),
     fs                   = require('fs'),
     multer               = require('multer'),
@@ -43,8 +43,6 @@ app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
-
-
 
 app.use(function(req,res,next){
   res.locals.currentUser  =req.user;

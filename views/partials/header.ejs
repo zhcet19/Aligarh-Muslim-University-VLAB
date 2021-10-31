@@ -44,7 +44,7 @@
                             <a class="nav-link " aria-current="page" href="/login"> <b>Login</b></a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="/register"> <b>Sign Up</b></a>
+                            <a class="nav-link " aria-current="page" href="/register"> <b>SignUp</b></a>
                           </li>
                   <%}	else  {%>
                     <li class="nav-item">
@@ -54,8 +54,12 @@
                       <a class="nav-link active" href="/experiment" data-toggle="tooltip" data-placement="top" title="Currently here" > <b>LABS </b></a>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
-                    <li class="nav-item" style="margin-left:100px;" ><a class="nav-link active" href="#" >  Signed as <%= currentUser.username %></a></li>	 
-                   
+                    <li class="nav-item" style="margin-left:100px; padding-left: 50px;" ><a class="nav-link active"> <%= currentUser.type %>  <%= currentUser.username %></a></li>	 
+                   <%if(currentUser.type=="student"){ %>
+                    <li class="nav-item" style="margin-left:100px; padding-left: 50px;" ><a class="nav-link active" href="/submitassignment" >  My Works</a></li>
+                   <%}else{%>
+                    <li class="nav-item" style="margin-left:100px; padding-left: 50px;" ><a class="nav-link active" href="/submitassignment" > Submitted Work</a></li>	 
+                   <%}%>
                   <%	}	%> 
                       </ul>
                     </div>
