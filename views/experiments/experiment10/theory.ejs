@@ -1,0 +1,502 @@
+<%- include ('../../partials/header') %>
+
+    <h3> Theory</h3>
+    <div id="contents" class="font-normal">
+        <div class="experiment-objectives">
+            <h2>Objectives</h2>
+            <p>
+                <strong>After completing this experiment you will be able to:</strong>
+                </p><ul>
+      <li>Categorize projects using COCOMO, and estimate effort and development time required for a project</li>
+      <li>Estimate the program complexity and effort required to recreate it using Halstead's metrics</li>
+    </ul>
+    
+            <p></p>
+        </div>
+        <div class="experiment-duration">
+            <h2>Time Required</h2>
+            <p>
+                Around <strong>3.00</strong> hours
+            </p>
+        </div>
+        <hr class="dotted-line">
+    
+        <h2>Project Estimation Techniques</h2>
+    
+    <p>
+    A software project is not just about writing a few hundred lines of source code 
+    to achieve a particular objective. The scope of a software project is 
+    comparatively <i>quite large</i>, and such a project could take several years to 
+    complete. However, the phrase "quite large" could only give some 
+    (possibly vague) qualitative information. As in any other science and engineering
+    discipline, one would be interested to <i>measure</i> how complex a project is. 
+    One of the major activities of the project planning phase, therefore, is to 
+    estimate various project parameters in order to take proper 
+    decisions. Some important project parameters that are estimated include: 
+      </p><ul>
+        <li>
+        <strong>Project size:</strong> What would be the size of the code written 
+        say, in number of lines, files, modules?
+        </li>
+        <li>
+        <strong>Cost:</strong> How much would it cost to develop a software? A
+        software may be just pieces of code, but one has to pay to the managers,
+        developers, and other project personnel.
+        </li>
+        <li>
+        <strong>Duration:</strong> How long would it be before the software is
+        delivered to the clients?
+        </li>
+        <li>
+        <strong>Effort:</strong> How much effort from the team members would be 
+        required to create the software?
+        </li>
+      </ul>
+    <p></p>
+    
+    <p>
+    In this experiment we will focus on two methods for estimating project metrics: 
+    COCOMO and Halstead's method.
+    </p>
+    
+    
+    <h2>COCOMO</h2>
+    
+    <p>
+    COCOMO (Constructive Cost Model) was proposed by Boehm. According to him, there 
+    could be three categories of software projects: organic, semidetached, and 
+    embedded. The classification 
+    is done considering the characteristics of the software, the development team and 
+    environment. These product classes typically correspond to application, utility
+    and system programs, respectively. Data processing programs could be considered 
+    as application programs. Compilers, linkers, are examples of utility programs. 
+    Operating systems, real-time system programs are examples of system programs. 
+    One could easily apprehend that it would take much more time and effort to
+    develop an OS than an attendance management system.
+    </p>
+    
+    <p>
+    The concept of organic, semidetached, and embedded systems are described below.
+    </p><ul>
+    <li>
+    <strong>Organic:</strong> A development project is said to be of organic type, 
+    if 
+      <ul style="font-size: 0.9em;">
+        <li>The project deals with developing a well understood application</li>
+        <li>The development team is small</li>
+        <li>The team members have prior experience in working with similar types of 
+        projects</li>
+      </ul>
+    </li>
+    <li>
+    <strong>Semidetached:</strong> A development project can be categorized as 
+    semidetached type, if 
+      <ul style="font-size: 0.9em;">
+        <li>The team consists of some experienced as well as inexperienced 
+        staff</li>
+        <li>Team members may have some experience on the type of system to be 
+        developed</li>
+      </ul>
+    </li>
+    <li>
+    <strong>Embedded:</strong> Embedded type of development project are those, which
+      <ul style="font-size: 0.9em;">
+        <li>Aims to develop a software strongly related to machine hardware</li>
+        <li>Team size is usually large</li>
+      </ul>
+    </li>
+    <p></p>
+    
+    <p>                                                    
+    Boehm suggested that estimation of project parameters should be done through
+    three stages: Basic COCOMO, Intermediate COCOMO, and Complete COCOMO.
+    </p>
+    
+    <h3>Basic COCOMO Model</h3>
+    <p>
+    The basic COCOMO model helps to obtain a rough estimate of the project
+    parameters. It estimates effort and time required for development in the 
+    following way: 
+    <br>
+                                  
+      <span class="contentEquation">Effort = a * (KDSI)<sup>b</sup> PM </span>                                                 
+      <span class="contentEquation">Tdev = 2.5 * (Effort)<sup>c</sup> Months </span> 
+                           
+    where
+    </p><ul>
+      <li>KDSI is the estimated size of the software expressed in Kilo Delivered 
+      Source Instructions</li>
+      <li>a, b, c are constants determined by the category of software project</li>
+      <li>Effort denotes the total effort required for the software development, 
+      expressed in person months (PMs)</li>
+      <li>Tdev denotes the estimated time required to develop the software 
+      (expressed in months)</li>  
+    </ul>
+    <p></p>
+    
+    <p>
+    The value of the constants a, b, c are given below: <br> <br>
+    </p><table class="data">
+    <thead><tr>
+    <th>Software project</th>
+    <th><i>a</i></th>
+    <th><i>b</i></th>
+    <th><i>c</i></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td style="text-align: left;">Organic</td>
+    <td>2.4</td>
+    <td>1.05</td>
+    <td>0.38</td>
+    </tr>
+    <tr>
+    <td style="text-align: left;">Semi-detached</td>
+    <td>3.0</td>
+    <td>1.12</td>
+    <td>0.35</td>
+    </tr>
+    <tr>
+    <td style="text-align: left;">Embedded</td>
+    <td>3.6</td>
+    <td>1.20</td>
+    <td>0.32</td>
+    </tr>
+    </tbody>
+    </table>
+    <p></p>
+    
+    <h3>Intermediate COCOMO Model</h3>
+    
+    <p>
+    The basic COCOMO model considers that effort and development time depends only 
+    on the size of the software. However, in real life there are many other project 
+    parameters that influence the development process. The intermediate COCOMO take 
+    those other factors into consideration by defining a
+    set of 15 cost drivers (multipliers) as shown in the table below <a href="/isad/isad/2/references/">[i]</a>. Thus, any project that makes use of 
+    modern programming practices would have lower estimates in terms of effort and 
+    cost. Each of the 15 such attributes can be rated on a six-point scale ranging 
+    from "very low" to "extra high" in their relative order of importance. Each 
+    attribute has an effort multiplier fixed as per the rating. The product of effort 
+    multipliers of all the 15 attributes gives the <strong>Effort Adjustment Factor 
+    (EAF)</strong>. 
+    
+    <br> <br>
+    
+    </p><table class="data" cellspacing="0" cellpadding="0">
+    <caption>Cost drivers for INtermediate COCOMO (Source: <a href="
+    http://en.wikipedia.org/wiki/COCOMO">http://en.wikipedia.org/wiki/COCOMO</a>)
+    </caption>
+    <thead>
+    <tr>
+    <th rowspan="2" valign="bottom">Cost Drivers
+    </th><th colspan="6">Ratings</th>
+    </tr>
+    <tr>
+    <th width="10%" valign="bottom" align="center">Very Low
+    </th><th width="10%" valign="bottom" align="center">Low
+    </th><th width="10%" valign="bottom" align="center">Nominal
+    </th><th width="10%" valign="bottom" align="center">High
+    </th><th width="10%" valign="bottom" align="center">Very High
+    </th><th width="10%" valign="bottom" align="center">Extra High
+    </th></tr>
+    </thead>
+    <tbody>
+    <tr>
+    <th style="background-color: #dddddd;" align="left">Product attributes</th>
+    </tr>
+    <tr>
+    <td style="text-align: left;">Required software reliability</td>
+    <td align="center">0.75</td>
+    
+    <td align="center">0.88</td>
+    <td align="center">1.00</td>
+    <td align="center">1.15</td>
+    <td align="center">1.40</td>
+    <td align="center"> </td>
+    </tr>
+    <tr>
+    <td style="text-align: left;">Size of application database</td>
+    <td align="center"> </td>
+    
+    <td align="center">0.94</td>
+    <td align="center">1.00</td>
+    <td align="center">1.08</td>
+    <td align="center">1.16</td>
+    <td align="center"> </td>
+    </tr>
+    <tr>
+    <td style="text-align: left;">Complexity of the product</td>
+    <td align="center">0.70</td>
+    
+    <td align="center">0.85</td>
+    <td align="center">1.00</td>
+    <td align="center">1.15</td>
+    <td align="center">1.30</td>
+    <td align="center">1.65</td>
+    </tr>
+    <tr>
+    <th style="background-color: #dddddd;" align="left">Hardware attributes</th>
+    </tr>
+    <tr>
+    
+    <td style="text-align: left;">Run-time performance constraints</td>
+    <td align="center"> </td>
+    <td align="center"> </td>
+    <td align="center">1.00</td>
+    <td align="center">1.11</td>
+    <td align="center">1.30</td>
+    <td align="center">1.66</td>
+    </tr>
+    <tr>
+    <td style="text-align: left;">Memory constraints</td>
+    
+    <td align="center"> </td>
+    <td align="center"> </td>
+    <td align="center">1.00</td>
+    <td align="center">1.06</td>
+    <td align="center">1.21</td>
+    <td align="center">1.56</td>
+    </tr>
+    <tr>
+    <td style="text-align: left;">Volatility of the virtual machine environment</td>
+    
+    <td align="center"> </td>
+    <td align="center">0.87</td>
+    <td align="center">1.00</td>
+    <td align="center">1.15</td>
+    <td align="center">1.30</td>
+    <td align="center"> </td>
+    </tr>
+    <tr>
+    <td style="text-align: left;">Required turnabout time</td>
+    <td align="center"> </td>
+    
+    <td align="center">0.87</td>
+    <td align="center">1.00</td>
+    <td align="center">1.07</td>
+    <td align="center">1.15</td>
+    <td align="center"> </td>
+    </tr>
+    <tr>
+    <th style="background-color: #dddddd;" align="left">Personnel attributes</th>
+    </tr>
+    <tr>
+    <td style="text-align: left;">Analyst capability</td>
+    
+    <td align="center">1.46</td>
+    <td align="center">1.19</td>
+    <td align="center">1.00</td>
+    <td align="center">0.86</td>
+    <td align="center">0.71</td>
+    <td align="center"> </td>
+    </tr>
+    <tr>
+    <td style="text-align: left;">Applications experience</td>
+    <td align="center">1.29</td>
+    
+    <td align="center">1.13</td>
+    <td align="center">1.00</td>
+    <td align="center">0.91</td>
+    <td align="center">0.82</td>
+    <td align="center"> </td>
+    </tr>
+    <tr>
+    <td style="text-align: left;">Software engineer capability</td>
+    <td align="center">1.42</td>
+    
+    <td align="center">1.17</td>
+    <td align="center">1.00</td>
+    <td align="center">0.86</td>
+    <td align="center">0.70</td>
+    <td align="center"> </td>
+    </tr>
+    <tr>
+    <td style="text-align: left;">Virtual machine experience</td>
+    <td align="center">1.21</td>
+    
+    <td align="center">1.10</td>
+    <td align="center">1.00</td>
+    <td align="center">0.90</td>
+    <td align="center"> </td>
+    <td align="center"> </td>
+    </tr>
+    <tr>
+    <td style="text-align: left;">Programming language experience</td>
+    <td align="center">1.14</td>
+    <td align="center">1.07</td>
+    
+    <td align="center">1.00</td>
+    <td align="center">0.95</td>
+    <td align="center"> </td>
+    <td align="center"> </td>
+    </tr>
+    <tr>
+    <th style="background-color: #dddddd;" align="left">Project attributes</th>
+    </tr>
+    <tr>
+    <td style="text-align: left;">Application of software engineering methods</td>
+    
+    <td align="center">1.24</td>
+    <td align="center">1.10</td>
+    <td align="center">1.00</td>
+    <td align="center">0.91</td>
+    <td align="center">0.82</td>
+    <td align="center"> </td>
+    </tr>
+    <tr>
+    <td style="text-align: left;">Use of software tools</td>
+    
+    <td align="center">1.24</td>
+    <td align="center">1.10</td>
+    <td align="center">1.00</td>
+    <td align="center">0.91</td>
+    <td align="center">0.83</td>
+    <td align="center"> </td>
+    </tr>
+    <tr>
+    <td style="text-align: left;">Required development schedule</td>
+    
+    <td align="center">1.23</td>
+    <td align="center">1.08</td>
+    <td align="center">1.00</td>
+    <td align="center">1.04</td>
+    <td align="center">1.10</td>
+    </tr>
+    </tbody>
+    </table>
+    
+    <br> <br>
+    
+    EAF is used to refine the estimates obtained by basic COCOMO as follows:
+    
+    <span class="contentEquation">Effort|<sub>corrected</sub> = Effort * EAF</span>
+    <span class="contentEquation">Tdev|<sub>corrected</sub> = 2.5 * (Effort|<sub>
+    corrected</sub>) <sup>c</sup></span>
+    <p></p>
+    
+    <h3>Complete COCOMO Model</h3>
+    
+    <p>
+    Both the basic and intermediate COCOMO models consider a software to be a single 
+    homogeneous entity -- an assumption, which is rarely true. In fact, many real 
+    life applications are made up of several smaller sub-systems. (One might not
+    even develop all the sub-systems -- just use the available services). The complete 
+    COCOMO model takes these factors into account to provide a far more accurate 
+    estimate of project metrics.
+    </p>
+    
+    <p>
+    To illustrate this, consider a very popular distributed application: the ticket
+    booking system of the Indian Railways. There are computerized ticket counters in 
+    most of the railway stations of our country. Tickets can be booked / cancelled 
+    from any such counter. Reservations for future tickets, cancellation of reserved
+    tickets could also be performed. On a high level, the ticket booking system has 
+    three main components:
+    </p><ul>
+      <li>Database</li>
+      <li>Graphical User Interface (GUI)</li>
+      <li>Networking facilities</li>
+    </ul>
+    <p></p>
+    
+    <p>
+    Among these, development of the GUI is considered as an organic project type; the 
+    database module could be considered as a semi-detached software. The networking 
+    module can be considered as an embedded software. To obtain a realistic cost,
+    one should estimate the costs for each component separately, and then add it up.
+    </p>
+    
+    
+    <h2>Advantages of COCOMO</h2>
+    
+    <p>
+    COCOMO is a simple model, and should help one to understand the concept of 
+    project metrics estimation. 
+    </p>
+    
+    
+    <h2>Drawbacks of COCOMO</h2>
+    
+    <p>
+    COCOMO uses KDSI, which is not a proper measure of a program's size. Indeed, 
+    estimating the size of a software is a difficult task, and any slight 
+    miscalculation could cause a large deviation in subsequent project estimates. 
+    Moreover, COCOMO was proposed in 1981 keeping the waterfall model of project life 
+    cycle in mind <a href="/2/references/">[2]</a>. It fails to 
+    address other popular approaches like prototype, incremental, spiral, agile models. 
+    Moreover, in present day a software project may not necessarily consist of 
+    coding of every bit of functionality. Rather, existing software components are
+    often used and glued together towards the development of a new software. COCOMO 
+    is not suitable in such cases.
+    </p>
+    
+    <p>
+    COCOMO II was proposed later in 2000 to many of address these issues.
+    </p>
+    
+    
+    
+    <h2>Halstead's Complexity Metrics</h2>
+    
+    <p>
+    Halstead took a linguistic approach to determine the complexity of a program. 
+    According to him, a computer program consists of a collection of different 
+    operands and operators. The definition of operands and operators could, however,
+    vary from one person to another and one programming language to other. Operands 
+    are usually the implementation variables or constants -- something upon which an 
+    operation could be performed. Operators are those symbols that affects the value 
+    of operands. Halstead's metrics are computed based on the operators and operands 
+    used in a computer program. Any given program has the following four parameters:
+    
+    </p><ul>
+    <li><strong>n1</strong>: Number of unique operators used in the program</li>
+    <li><strong>n2</strong>: Number of unique operands used in the program</li>
+    <li><strong>N1</strong>: Total number of operators used in the program</li>
+    <li><strong>N2</strong>: Total number of operands used in the program</li>
+    </ul>
+    
+    Using the above parameters one compute the following metrics:
+    <p></p>
+    
+    <ul>
+    <li><strong>Program Length</strong>: N = N1 + N2</li>
+    <li><strong>Program Vocabulary</strong>: n = n1 + n2</li>
+    <li><strong>Volume</strong>: V = N * lg n</li>
+    <li><strong>Difficulty</strong>: D = (n1 * N2) / (2 * n2)</li>
+    <li><strong>Effort</strong>: E = D * V</li>
+    <li><strong>Time to Implement</strong>: T = E / 18 (in seconds) 
+    <a href="/2/references/">[vi]</a></li>
+    </ul>
+    
+    <p>
+    The program volume V is the minimum number of bits needed to encode the program. 
+    It represents the size of the program while taking into account the programming 
+    language. 
+    <br>
+    The difficulty metric indicates how difficult a program is to write or 
+    understand. 
+    <br>
+    Effort denotes the "mental effort" required to develop the software, or to recreate the same in another programming language
+    <a href="/2/references/">[iv]</a>.
+    </p>
+    </ul></div>
+    
+    
+    </section>
+    
+
+    </div>
+
+    <%- include ('../../partials/footer') %>
+
+
+
+
+
+
+
+
+
+    

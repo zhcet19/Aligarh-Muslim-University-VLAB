@@ -1,0 +1,106 @@
+<%- include ('../../partials/header') %>
+
+    <h3> Theory</h3>
+    <div class="content" id="experiment-article-section-1-content">  
+        <b>Objectives</b><br><br>
+        <ol>
+            <li>Learn Filtering of Rectified signal</li>
+            <li>Ripple Voltage and Ripple Factor</li>
+            <li>Learn Capacitive filtering</li>
+        </ol><br><br>
+        <b>Rectifier</b><br><br>
+        <p>In our earlier experiment we have seen that a full-wave rectifier is exactly the same as the half-wave, but allows unidirectional current through the load during the entire sinusoidal cycle (as opposed to only half the cycle in the half-wave). 
+            A full-wave rectifier converts the whole of the input waveform to one of constant polarity (positive or negative) at its output.</p><br>
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ac.in/be/exp8/image/capar1.png" style="width:600px;height:200px">
+            </p><br>
+            Figure:1
+        </div><br><br>
+        <b>Filter</b><br><br>
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ac.in/be/exp8/image/capar2.png" style="width:600px;height:200px">
+            </p><br>
+            Figure:2
+        </div><br><br>
+        <p>What is really desired is to convert the pulsating output of the rectifier to a constant DC supply. Thus we would like to ‘filter’ the pulsating input signal. </p><br><br>
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ac.in/be/exp8/image/capar3.png" style="width:600px;height:200px">
+            </p><br>
+            Figure:3
+        </div><br><br>
+        <p> We can do this by splitting the input waveform into AC (high frequency) 
+            and the DC components (very low frequency) and by then ‘rejecting’ the high frequency components.</p><br><br>
+        <b>Filtering</b><br><br>
+        <p>From our filtering experiments we have seen that the simplest kind of filter that can perform the filtering task just described is a capacitor. Thus, if we connect a capacitor directly across the output of a rectifier, the AC 
+            components will ‘see’ a low impedance path to ground and will not, therefore appear in the output.</p><br><br>
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ac.in/be/exp8/image/capar4.png" style="width:600px;height:200px">
+            </p><br>
+            Figure:4
+        </div><br><br>
+        <b>Full Wave Rectification + Filtering</b><br><br>
+        <p>The smoothing capacitor converts the full-wave rippled
+            output of the rectifier into a smooth DC output voltage. The smoothing capacitor acts as a tank.</p><br>
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ac.in/be/exp8/image/capar5.png" style="width:300px;height:300px">
+            </p><br>
+            Figure:5
+        </div><br><br>
+        <b>Ripple Voltage and Ripple Factor</b><br><br>
+        <p>Assuming a finite capacitor is connected, since a new charging pulse occurs every 
+            half cycle the capacitor charges and discharges very frequently. We can observe that 
+            smaller the V<sub>pp</sub>, the more the waveform will resemble a pure DC voltage. The variable portion is known as ‘ripple’ and the value Vpp is known as the ripple voltage. Further the ratio of the 
+            ripple voltage to the DC or average voltage is known as the ripple factor.</p><br><br>
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ac.in/be/exp8/image/capar6.png" style="width:300px;height:300px">
+            </p><br>
+            Figure:6
+        </div><br><br>
+        <b>‘Filling the Gaps’</b><br><br>
+        <p>So we see that, a capacitor-input filter will charge and discharge such that it fills in the “gaps” between each peak. This reduces variations of voltage.
+            As we have seen, the remaining voltage variation is called ripple voltage.</p><br>
+
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ac.in/be/exp8/image/capar7.png" style="width:400px;height:400px">
+            </p><br>
+            Figure:7
+        </div><br><br>
+        <b>Choosing the Capacitor</b><br><br>
+        <p>Since a rectifier circuit is designed with a particular load in mind, 
+            choosing the capacitor needs careful analysis. Since low ripple factors a desired, choosing a large capacitance value is not practical. This is because larger capacitance will cost more and will create higher peak currents in the transformer secondary and in the supply feeding it. In the subsequent experiments, 
+            let us see how time constant plays a role in the rectified output waveform shape and characteristics.</p><br>
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ac.in/be/exp8/image/capar8.png" style="width:200px;height:200px">
+            </p><br>
+            Figure:8
+        </div><br><br>
+        <b>Half Wave vs Full Wave Capacitive Rectification</b><br><br>
+        <p>If the capacitance and voltage sources used are the same, which one among the
+            two – half wave or full wave gives lesser ripple effect ?</p><br>
+        <p>The advantage of a full-wave rectifier over a half-wave is quite clear. The capacitor can more 
+            effectively reduce the ripple when the time between peaks is shorter.</p><br><br>
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ac.in/be/exp8/image/capar9.png" style="width:400px;height:400px">
+            </p><br>
+            Figure:9
+        </div><br><br>
+                 
+    </div>
+    </section>
+
+
+    </div>
+
+    <%- include ('../../partials/footer') %>
+
+
+

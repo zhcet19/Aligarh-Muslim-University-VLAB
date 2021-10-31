@@ -1,5 +1,24 @@
 <%- include ('./partials/header') %>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 wrapper quizMain">
+            <pre>
+                <h1> Topic Assessment</h1>
+                <form>
+                    <div class="form-group buttonStart">
+                        <% if(currentUser.type=="teacher" ){ %>
+                            <a class="btn btn-primary" href="/addquiz"> Frame Quiz </a>
 
+                            <a class="btn btn-primary" href="/quiz/questions" style="margin-top:10px"> View Submitted Quiz </a>
+                            <%} else {%>
+                                <a class="btn btn-primary" href="/quiz/questions"> Start Quiz </a>
+                            <%}%>
+                    </div>
+                </form>
+            </pre>
+        </div>
+    </div>
+</div>
 <%- include ('./partials/footer') %>
 
         

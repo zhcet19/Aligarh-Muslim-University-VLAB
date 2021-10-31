@@ -5,7 +5,6 @@ const middleWareObj = require('../middleware');
 var middleWare = require("../middleware")
 var User     = require("../models/user")
 
-
 // home route
 router.get("/",middleWare.isLoggedIn, function (req, res) {
   

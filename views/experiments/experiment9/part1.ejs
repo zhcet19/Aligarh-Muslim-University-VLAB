@@ -1,0 +1,127 @@
+<%- include ('../../partials/header') %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
+<script class="include" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script class="include" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqPlot/1.0.9/jquery.jqplot.min.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.5.1/math.min.js"></script>
+<script src="./Js/rcfrqlpf.js"></script>
+<link rel="stylesheet" type="text/css" href="./stylesheets/rcfreqcss.css">
+<body bgcolor="#000066" > 
+   
+    <div id="dialogoverlay"></div>
+    <div id="dialogbox">
+        <div>
+            <div id="dialogboxhead"></div>
+            <div id="dialogboxbody"></div>
+            <div id="dialogboxfoot"></div>
+        </div>
+    </div>
+    <div id="whole_body" style=" background-color:white;position:relative; margin-left:auto; margin-right:auto; top:10px;height:1400px; width:1160px;">
+
+        <div style="font-size:30px; text-align:center;padding-right:100px; height:40px"> <b > RC Frequency Response-LPF </b></div>
+        <div id="ckt_values1" style="position:absolute;top:80px;width:605px;height:450px;left:10px;">
+            <p>
+                <img src ="./images/rc_lpf.png" style="width:400px;height:350px;position:absolute;right:80px" /> 
+
+            
+            <p style="position:absolute;top:155px;right:200px;font-size:15px"><b>C<sub>L</sub></b></p><!--Cc1-->           
+            <p style="position:absolute;top:50px;right:325px;font-size:15px"><b>R<sub>L</sub></b></p><!--Rc-->               
+            <p style="position:absolute;top:130px;right:15px;font-size:15px"><b>V<sub>O</sub></b></p><!--Vo-->
+            <p style="position:absolute;top:370px;right:430px;font-size:15px"><b>Freq</b></p><!--Freq-->
+            <p style="position:absolute;top:370px;right:300px;font-size:15px"><b>V<sub>in</sub></b></p><!--vin-->
+
+            <input type="text" name="inpfq" id="fqr"  value="" readonly  style="position:absolute;top:380px;right:350px;width:70px"> 
+             <input type="text" name="inpvt" id="inpvolt"  value="" readonly  style="position:absolute;top:380px;right:220px;width:70px"> 
+            <!--border:none-->                
+            <input type="text" name="resis" id="rload"  value="" readonly  style="position:absolute;top:60px;right:245px;width:70px"> 
+           <input type="text" name="capa" id="cload"  value="" readonly style="position:absolute;top:190px;right:120px;width:70px"> 
+           <input type="text" name="outv" id="vout"  value="" readonly style="position:absolute;top:140px;right:60px;width:60px">
+           
+        </div>
+
+        <div id="cntrwrap" style="position:absolute;border: 2px solid #3385ff; top:30px;width:500px;height:220px;right:10px;">
+            <div id="cntrlr" style="position:absolute; background-color:#3385ff;   height:50px; top:0px; right:0px; width:500px;font-size: 16px;font-weight: bold;">
+                <p style="text-align:center;padding-right:230px;color:white"><b>CONTROLS</b></p></div>
+            <div id="slide" style=" position:absolute; top:52px; right:50px;height:400px; width:433px;  border-radius: 10px;">
+
+             
+                &nbsp;&nbsp; Load Resistance (R<sub>L</sub>) : &nbsp;&nbsp;<input type="range" name="resis" id="rl" min="100" max="10000" step="100" value="" oninput="resldChange()" style="width:180px"> &nbsp; &#937;<br>
+               &nbsp;&nbsp; Load Capacitor( C<sub>L</sub>) : &nbsp;&nbsp;&nbsp;&nbsp;<input type="range" name="resis" id="cl" min="0.01" max="47" step="0.1" value="" oninput="capldChange()" style="width:180px"> &nbsp;nf<br><!--&#956;-->
+               &nbsp;&nbsp; Input Voltage (V<sub>in</sub>) : &nbsp;&nbsp;&nbsp; <input type="range" name="inpv" id="vin" min="2" max="10" step="1" value=""  oninput="vinChange()" style="width:180px;"> &nbsp;V<br>                  
+               &nbsp;&nbsp; Frequency (Freq) :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="range" name="freqs" id="fq" min="2.5" max="10" step="0.47" value=""  oninput="freqChange()" style="width:180px;"> &nbsp; Hz<br>
+               
+               <br>
+                <input type="button" id="add" value="Add to Table" onclick="tabled()" style="position:absolute;  width:100px;  right:330px;cursor:pointer; "/>  
+             
+                 
+                <select name="graphplot" id="graphplot"  onclick="showDiv()" style="cursor: pointer; background-color:#85D2EE;position:absolute; right:150px; width:127px">
+<option value="0">Plot</option>
+<option value="1" >Frequency Response</option>
+<option value="2">Phase Response</option>
+</select><br>
+             <input type="button" id="clr" value="Clear" onclick="cleard()" style="position:absolute; top:137px;width:100px; right:10px;cursor:pointer;  "/>
+            </div>
+        </div>
+         <div id="msg" style="position:absolute;top:550px;left:150px; width:300px;height:50px;">
+              <p id="demo" style="color:red;"></p>
+              <p id="demos" style="color:red;"></p>
+
+          </div>
+
+        <div id="description" style="background-color: #3385ff;   position:absolute; top:40px; left:10px; width:360px;font-size: 16px;font-weight: bold;">
+            <div class="dropdown">
+                <p style="text-align:center;padding-right:150px;color:white;"> INSTRUCTION</p>
+                <div class="dropdown-content">
+                    <ol type="1">
+                        <li>Set Load Resistance(R<sub>L</sub>)=10 K&#937;.</li>
+                        <li>Set Load Capacitor(C<sub>L</sub>)=0.01nF.</li>
+                        <li>The source voltage (V<sub>in</sub>) is set to 10V.</li>
+                        <li>Keeping source voltage constant, vary the frequency from 50 Hz in regular steps.</li>                           
+                        <li>Click on "Add to Table" button to add the readings to the table.</li>
+                        <li>Vary the Frequency by keeping the load resistances and load capacitance constant. </li>                           
+                        <li>Select  "Plot" button to plot the frequency graph or the phase graph  of the RC frequency, Frequency(Hz) along X-axis and Magnitude(dB) along Y-axis.</li>
+                        <li>Click on "Clear" button to take another set of readings.</li>
+                    </ol> 
+
+                </div>
+            </div>
+        </div>
+        <div id="tblwrap" style="position:absolute; top:270px;right:10px; height:350px; width:500px;border:2px solid #3385ff;">
+            <div style="position:absolute; font-size:16px;background-color: #3385ff;  top:0px;left:0px; width:500px; height:50px;font-weight: bold;">
+                <p style="text-align:center;padding-right:710px;color:white"> <b> EXPERIMENTAL TABLE</b></p>
+            </div>
+            
+            <div id="table" style="background-color:#e6f5ff;position:absolute;top:50px;width:500px;height:300px; left:0px;overflow-y: auto">
+
+                <table id="mytable" border="1" >                    
+                    <tr>
+                        <th width="50">Serial No.</th>
+                        <th width="150">Frequency(Hz)</th>
+                        <th width="150">Magnitude(dB)</th>
+                        <th width="150">Phase(theta)</th>
+                        <th width="150"> Output Voltage(V)</th>
+                    </tr>                   
+
+                </table>
+            </div>
+        </div>
+
+        <div id="grpwrap" style="position:absolute;border: 2px solid #3385ff; top:730px;height:640px; width:1050px;left:80px">
+            <div style="position:absolute; font-size:16px; top:0px;left:0px;  height:50px;background-color:#3385ff;  width:1050px;font-weight: bold;"><p> <b style="text-align:center;padding-right:810px;color:white"> GRAPH PLOT</b></p>
+                <div class="tooltip" ><button id="calci"  onclick="printf()" style="position:absolute;padding-right:40px; cursor:pointer;top:13px;right:20px;width:5px;height:25px;border:none; background-color:#3385ff;">
+                        <img src="./images/Print%20Filled.png" alt="Save icon" style="width:20px;height:20px;top:13px;"/></button> 
+                    <span class="tooltiptext">Print</span></div>
+            </div>
+            
+            <div id="chartContainer" style="display:block;position:absolute;  top:160px;  left:0px; height:480px; width:1050px;"><!--- frequency plot--->
+            </div>
+             <div id="chartContainers" style="display:none;position:absolute;  top:160px;  left:0px; height:480px; width:1050px;"><!--- phase plot--->
+            </div>
+        </div>
+       
+            </div>
+        </div>
+
+    </div>
+    
+    <%- include ('../../partials/footer') %>

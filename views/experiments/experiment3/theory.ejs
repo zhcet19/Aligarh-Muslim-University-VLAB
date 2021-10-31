@@ -1,0 +1,259 @@
+<%- include ('../../partials/header') %>
+
+    <h3> Theory</h3>
+    <div class="content" id="experiment-article-section-1-content">
+        <b> Objectives</b><br><br>
+        At the end of the module the student would be able to
+        <ol>
+            <li>Explain Rectification</li>
+            <li>Explain Center Tapped Full Wave Rectification</li>
+            <li>Explain Bridge Full Wave Rectification</li>
+        </ol><br><br>
+        <!--   <b>Half Rectifier</b><br><br>
+           <p>In half wave rectification, either the positive or negative half of the AC wave is passed, while the other half is blocked. 
+               Because only one half of the input waveform reaches the output, it is very inefficient if used for power transfer.</p><br>
+           <div align="center">
+               <p>
+                   <img src="image/fullr1.png" style="width:400px;height:300px">
+               </p><br>
+               Figure:1
+           </div><br><br>-->
+        <b>Rectification</b><br>
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ernet.in/be/exp7/image/rectifier.png" style="width:580px;height:120px">
+            </p><br>
+            Figure :1
+        </div><br><br>
+        <p style="text-align:justify"> A rectifier is a device that converts alternating current (AC) to direct current (DC), a process known as rectification. Rectifiers are essentially of two types – a half wave rectifier and a full wave rectifier.</p><br><br>
+
+        <!--  <b>Full Wave Rectifier</b><br><br>
+          <p>In this we will see how we can rectify both the cycles of the input waveform. Full Wave Rectifier</p><br><br>-->
+        <b>Full Wave Rectifier</b><br><br>
+        <p style="text-align:justify">A full-wave rectifier is exactly the same as the half-wave, 
+            but allows unidirectional current through the load during the entire sinusoidal 
+            cycle (as opposed to only half the cycle in the half-wave). A full-wave rectifier converts the whole of the input waveform to one of constant polarity (positive or negative) at its output. 
+            Let us see our half wave rectifier example and deduce the circuit.</p><br>
+
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ernet.in/be/exp7/image/fullwavrec.png" style="width:600px;height:300px">
+            </p><br>
+            Figure:2
+        </div><br><br>
+        <p> For a half wave Rectifier this is what we have observed</p><br>
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ernet.in/be/exp7/image/fullwavrcshft.png" style="width:600px;height:300px">
+            </p><br>
+            Figure:3
+        </div><br><br>
+        <p>If we change the phase of the input waveform by 180 degrees</p><br><br>
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ernet.in/be/exp7/image/fullwavshft1rc.png" style="width:600px;height:300px">
+            </p><br>
+            Figure:4
+        </div><br><br>
+        <p> Now if we add these two circuits, we would get</p><br>
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ernet.in/be/exp7/image/fullwavcmbrc.png" style="width:600px;height:300px">
+            </p><br>
+            Figure:5
+        </div><br><br>
+        <b>Full Wave Rectifier - Circuit</b><br><br>
+        <p style="text-align:justify">So, we have seen that this rectifier circuit consists 
+            of two sources which have a phase difference along with two diodes. When V<sub>1</sub> is positive, V<sub>2</sub> is negative. Hence the top diode(D<sub>1</sub>) will be a short and the bottom diode(D<sub>2</sub>) will be an open. 
+            On the other hand, when V<sub>1</sub> is negative, V<sub>2</sub> is positive. 
+            Hence the bottom diode(D<sub>2</sub>) will be on and the top diode(D<sub>1</sub>) will be an open circuit.</p><br>
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ernet.in/be/exp7/image/fullwavreccrt.png" style="width:300px;height:300px">
+            </p><br>
+            Figure:6
+        </div><br><br>
+        <b>Full Wave Rectifier – Waveforms</b><br><br>
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ernet.in/be/exp7/image/fullwavg1.png" style="width:460px;height:170px">
+            </p>
+            Figure:7
+            <p>
+                <img src="http://vlabs.iitkgp.ernet.in/be/exp7/image/fullwavg2.png" style="width:460px;height:170px">
+            </p>
+            Figure:8
+        </div>
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ernet.in/be/exp7/image/fullwavg3.png" style="width:460px;height:170px">
+            </p>
+            Figure:9
+        </div><br><br>
+        <p style="text-align:justify">The resulting waveform of the schematic is shown above. This configuration is rarely used because sometimes it 
+            may be impractical to obtain two voltage sources and it is difficult to 
+            SYNC the sources. Let us see how a single source can be used.</p><br><br>
+        <b>Full Wave Rectifier – Center Tapped Transformer</b><br><br>
+        <p style="text-align:justify">A Full-Wave Rectifier can be constructed using Center-Tapped transformer – 
+            which give us two  shifted sinusoids so that exactly one of the waveforms is positive at one
+            time and two diodes. As compared to the half wave rectifier we use two diodes instead of one,
+            one of the two diodes remains in conduction in both of the half cycles. 
+            At any point in time, only one of the diodes is forward biased. This allows for continuous conduction through load.</p><br><br>
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ernet.in/be/exp7/image/fullr8.png" style="width:300px;height:200px">
+            </p><br>
+            Figure:10
+        </div><br><br>
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ernet.in/be/exp7/image/fullr9.png" style="width:300px;height:200px">
+            </p><br>
+            Figure:11
+        </div><br><br>
+        $$\frac{N_P}{N_S}=\frac{V_P}{V_S}=\frac{1}{2}$$<br>
+        $$\Rightarrow V_S=2 \times V_I$$<br>
+
+        <b>Center Tapped Transformer – Positive cycle</b><br><br>
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ernet.in/be/exp7/image/cntrwvp.png" style="width:500px;height:200px">
+            </p><br>
+            Figure:12
+        </div><br><br>
+        For Positive Cycle \(D_1\) is Forward Biased and \(D_2\) is Reverse Biased <br>
+        $$V_I - V_O=0$$<br>
+        $$\Rightarrow V_O=V_I$$<br>
+        <b>Center Tapped Transformer– Negative cycle</b><br><br>
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ernet.in/be/exp7/image/cntrwvn.png" style="width:500px;height:200px">
+            </p><br>
+            Figure:13
+        </div><br><br>
+        For Negative Cycle \(D_1\) is  Reverse Biased and \(D_2\) is Forward Biased <br>
+        $$V_I - V_O=0$$<br>
+        $$\Rightarrow V_O=V_I$$<br>
+        <b>Bridge Rectifier</b><br><br>
+        <p style="text-align:justify">Bridge rectifier uses 4 rectifying diodes connected in a "bridged" configuration to produce the desired output but does not require a special centre tapped transformer, thereby reducing its size and cost. The single secondary winding is connected to one side of the diode bridge network and the load to the other side as shown below.</p><br>
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ernet.in/be/exp7/image/fullwaverecbridgeckt.png" style="width:400px;height:250px">
+            </p><br>
+            Figure:14
+        </div><br><br>
+        <b>Bridge Rectifier – Positive Half Cycle</b><br><br>
+        <p>During the positive half cycle of the supply diodes D1 and D2 conduct in series while diodes D3 and D4 are reverse biased (ideally they can be replaced with open circuits)
+            and the current flows through the load as shown below.</p><br>
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ernet.in/be/exp7/image/fullwvrp.png" style="width:400px;height:250px">
+            </p><br>
+            Figure:15
+        </div><br><br>
+        For Positive Half Cycle \(D_1\) and \(D_2\)  is Forward Biased and \(D_3\) and \(D_4\) is Reverse Biased.
+        $$V_I-V_O=0$$<br>
+        $$\Rightarrow V_O=V_I$$<br>
+        $$V_O=V_I -2 \times V_b$$<br>
+        $$V_O=V_I -2 \times V_b - 2 \times I_{rd}$$<br>
+        where,<br>
+        \(V_I\) is the input voltage,<br>
+        \(V_b\) is barrier potential,<br>
+        \(r_d\) is diode resistance<br><br>
+
+        <b>Bridge Rectifier – Negative Half Cycle</b><br><br>
+        <p>During the negative half cycle of the supply, diodes D3 and D4 conduct in 
+            series, but diodes D1 and D2 switch of as they are now reverse biased.
+            The current flowing through the load is the same direction as before.</p><br>
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ernet.in/be/exp7/image/fullwvrn.png" style="width:400px;height:250px">
+            </p><br>
+            Figure:16
+        </div><br><br>
+        For Negative Half Cycle \(D_1\) and \(D_2\)  is Reverse Biased and \(D_3\) and \(D_4\) is  Forward Biased.
+        $$V_I-V_O=0$$<br>
+        $$\Rightarrow V_O=V_I$$<br>
+
+
+
+        <b>Average DC Load Voltage</b><br><br>
+        $$V_O=V_m \times \sin wt  \quad for \quad 0 \leq  wt \leq \pi$$<br>
+        $$V_{av}=V_{dc}= \frac{2 \times V_m}{\pi}$$<br>
+        <b>Average Load Current</b><br><br>
+        $$I_{av}=\frac{V_{av}}{R}=\frac{2\times V_m}{\pi \times R}$$<br>
+        $$I_{av}=\frac{2 \times I_m}{R}$$<br>
+        <b>RMS Load Current</b><br><br>
+        $$I=I_m \times \sin wt \quad for \quad 0 \leq  wt \leq \pi$$<br>
+        $$I_{rms}=\frac{I_m }{ √2}$$<br>
+        <b>RMS Load Voltage</b><br>
+        $$V_{rms}=I_{rms} \times R = \frac{I_m}{√2} \times R$$<br>
+        $$V_{rms}=\frac{V_m}{√2}$$<br>
+
+        <b>Form factor</b>: It is defined as the ratio of rms load voltage and average load voltage.<br>
+
+        $$F.F= \frac{V_{rms}}{V_{av}}$$<br>
+        $$F.F= \frac{\frac{V_{m}}{√2}}{\frac{2 \times V_m}{\pi}}=\frac{\pi}{2√2}=1.11$$<br>
+
+        \(F.F \geq 1\)<br><br>
+
+        <b>Ripple Factor</b><br><br>
+        $$\gamma=√({F.F}^2-1 )\times 100\%$$<br>
+        $$\gamma=√({1.11}^2-1) \times 100\%=48.1\%$$<br><br>
+        <b>Efficiency</b>:It is defined as ratio of dc power available at the load to the input ac power.<br>
+
+        $$n\%=\frac{P_{load}}{P_{in}} \times 100\%$$<br>
+        $$n\%=\frac {{I_{dc}^2} \times R}{{I_{rms}^2} \times R}\times 100\%$$<br>
+           $$n\%=\frac{\frac {4 \times I_{m}^2}{\pi^2}}{\frac{I_{m}^2}{2}}\times 100\%=\frac{8}{\pi^2}\times 100\% =81.13 \%$$<br><br>         
+
+        <b>Peak Inverse Volatge</b><br><br>
+        <p style="text-align:justify">   For rectifier applications, peak inverse voltage (PIV) or peak reverse voltage (PRV) 
+            is the maximum value of reverse voltage which occurs at the peak of the input cycle 
+            when the diode is reverse-biased.The portion of the sinusoidal waveform which repeats or duplicates itself is known as the cycle. 
+            The part of the cycle above the horizontal axis is called the positive half-cycle, the part of the cycle below 
+            the horizontal axis is called the negative half cycle. With reference to the amplitude of the cycle, 
+            the peak inverse voltage is specified as the maximum negative value of the sine-wave within a cycle's negative half cycle.</p><br><br>
+        For Bridge Rectifier,<br>
+        \(D_1\) and \(D_2\) is Forward Biased <br>
+        \(D_3\) and \(D_4\) is Reverse Biased <br>
+        $$ V_m-V_O=0$$<br>
+        $$\Rightarrow V_O=V_m$$<br>
+        $$- V_O+PIV=0$$<br>
+        $$\Rightarrow PIV=V_m$$<br>
+        $$PIV \geq V_m$$<br>
+        For Center Tapped Rectifier,<br>
+        \(D_2\) is Forward Biased,<br>
+        PIV at \(D_1\),
+        $$ V_m-V_O=0$$<br>
+        $$\Rightarrow V_O=V_m$$<br>
+        $$V_O-PIV+V_m$$<br>
+        $$\Rightarrow PIV=2V_m$$<br>
+        $$PIV \geq 2V_m$$<br>
+        <b>Note</b><br><br>
+        <p style="text-align:justify"><!--Remembering the proper layout of diodes in a full-wave bridge 
+            rectifier circuit can often be frustrating to the new student of electronics.-->
+            An alternative representation of full-wave bridge 
+            rectifier circuit is easier both to remember and to comprehend. 
+            It's the exact same circuit, except all diodes are drawn in a horizontal attitude, all “pointing”
+            the same direction.</p><br>
+        <div align="center">
+            <p>
+                <img src="http://vlabs.iitkgp.ernet.in/be/exp7/image/fullwvnew.png" style="width:400px;height:250px">
+            </p><br>
+            Figure:17
+        </div><br><br>
+     
+    </div>
+    </section>
+
+
+    </div>
+
+    <%- include ('../../partials/footer') %>
+
+
+
+
+
+
+
