@@ -94,8 +94,9 @@
          
     <div class="row">
         
-            <form method="post" action="/quiz/next">
-                
+            <form method="post" action="/quiz/next/<%=experimentnumber%>">
+                 
+              
                     <label><%= question %></label>
                     <div class="radio">
                         <% options.forEach(function(option,index){ %>
@@ -105,7 +106,7 @@
                         <% })%>
                     </div>
                     <input type="submit" class="btn btn-success" value="Next" style="margin-left:150px;">
-                
+                   
             </form>
         
     </div>

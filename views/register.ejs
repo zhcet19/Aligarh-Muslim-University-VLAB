@@ -23,8 +23,8 @@
                         <label for="UserType"></label>
                         <select name="user" id="UserType" class="form-control" onselect="askEnroll()">
                             <option selected>Choose UserType</option>
-                            <option value="teacher">Teacher</option>
-                            <option value="student">Student</option>
+                            <option value="Teacher">Teacher</option>
+                            <option value="Student">Student</option>
                         </select>
                     </div>
 
@@ -57,7 +57,7 @@
     function clck(){
 
         var enroFld = document.getElementById("type");
-        if(qselect.value=="teacher"){
+        if(qselect.value=="Teacher"){
             enroFld.style.display="none";
         }
         else{

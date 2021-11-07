@@ -56,11 +56,11 @@
                       <a class="nav-link active" href="/experiment" data-toggle="tooltip" data-placement="top" title="Currently here" > <b>LABS </b></a>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
-                    <li class="nav-item" style="margin-left:100px; padding-left: 50px;" ><a class="nav-link active"> <%= currentUser.type %>  <%= currentUser.username %></a></li>	 
-                   <%if(currentUser.type=="student"){ %>
-                    <li class="nav-item" style="margin-left:100px; padding-left: 50px;" ><a class="nav-link active" href="/submitassignment" >  My Works</a></li>
+                    <li class="nav-item" style="margin-left:100px; padding-left:50px;" ><%= currentUser.type %> <%= currentUser.username %></li>	 
+                   <%if(currentUser.type==" Student"){ %>
+                    <li class="nav-item" style="margin-left:100px; padding-left: 160px;" ><a class="nav-link active" href="/submitassignment" style="color:#0c8049">Your Submission</a></li>
                    <%}else{%>
-                    <li class="nav-item" style="margin-left:100px; padding-left: 50px;" ><a class="nav-link active" href="/submitassignment" > Submitted Work</a></li>	 
+                    <li class="nav-item" style="margin-left:100px; padding-left: 160px;" ><a class="nav-link active" href="/submitassignment" style="color:#0c8049">Submitted Work</a></li>	 
                    <%}%>
                   <%	}	%> 
                       </ul>
@@ -69,13 +69,13 @@
                 </nav>
                 <div class="container">
                   <%  if(error && error.length >0){ %>
-                    <div  class="alert alert-danger" role="alert">
+                    <div  class="alert alert-danger" role="alert"  style="margin-right:180px;">
                     <%= error %>
                       </div>
                   <% } %>	
                     <%  if(success && success.length >0){ %>
                     
-                    <div  class="alert alert-success" role="alert">
+                    <div  class="alert alert-success" role="alert" style="margin-right:180px;">
                     <%= success %>
                       </div>
                     <% } %>

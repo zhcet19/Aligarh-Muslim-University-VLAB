@@ -5,23 +5,30 @@ var express  = require('express')
 var router   = express.Router()
 var questionsModel = require("../models/quiz");
 // initialize variables 
-var questions = [],
-    answers = [],
-    i = 0;
+var questions = [];
+var answers = [];
+var i=0;
+
+   
 
 // Quiz API Routes (/quiz)
 
-router.get("/quiz",middleWare.isLoggedIn, function (req, res) {
-    res.render("experimentquiz");
+router.get("/quiz/:number",middleWare.isLoggedIn, function (req, res) {
+    var experimentnumber=req.params.number;
+    console.log(experimentnumber);
+    res.render("experimentquiz",{experimentnumber:experimentnumber});
 });
 
-router.get('/quiz/questions',middleWare.isLoggedIn,(req, res, next) => {
+router.get('/quiz/questions/:number',middleWare.isLoggedIn,(req, res, next) => {
+    var experimentnumber=req.params.number;
+    console.log(experimentnumber);
     questionsModel.aggregate([{$sample: {size: 10}}])
 .then(data => {
     if(data.length) {
+    
        questions = data;
            answers = [];
-       res.render('quizquestions',{question:questions[0].question,options:questions[0].options});
+       res.render('quizquestions',{question:questions[0].question,options:questions[0].options,quizno:questions[0].quizno,experimentnumber:experimentnumber});
     } else
     {
         res.render(404);
@@ -32,23 +39,26 @@ router.get('/quiz/questions',middleWare.isLoggedIn,(req, res, next) => {
 }) } );
 
 // Quiz API Routes (/quiz/add)
-router.get('/addquiz',middleWare.isLoggedIn,(req,res,next)=>{
+router.get('/quiz/addquiz/:number',middleWare.isLoggedIn,(req,res,next)=>{
+    var quiznumber=req.params.number;
    questionsModel.find({}, (err, items) => { 
         if (err) { 
             console.log(err); 
         } 
         else { 
-            res.render('questionframe', { items: items }); 
+            res.render('questionframe', { items: items,quiznumber:quiznumber }); 
         } 
     }); 
 })
 
-router.post('/addquiz',middleWare.isLoggedIn, (req, res, next) => {
+router.post('/quiz/addquiz/:number',middleWare.isLoggedIn, (req, res, next) => {
     var options= [req.body.option1,req.body.option2,req.body.option3,req.body.option4];
+    var quiznumber=req.params.number;
     var obj={
         question:req.body.question,
         options:options,
-        answer:req.body.answer
+        answer:req.body.answer,
+        quizno:quiznumber
     }
     console.log(req.body);
   
@@ -59,22 +69,23 @@ router.post('/addquiz',middleWare.isLoggedIn, (req, res, next) => {
         else { 
             
             req.flash("success" , "Successfuly added viva ");
-            res.redirect('/addquiz');
+            res.redirect('/quiz/addquiz/'+ quiznumber);
         } 
     }); 
 
 });
 
 // Quiz API Routes (/quiz/next)
-router.post('/quiz/next',middleWare.isLoggedIn, (req,res,next)=>{
+router.post('/quiz/next/:number',middleWare.isLoggedIn, (req,res,next)=>{
     console.log("questions", questions);
+   var experimentnumber=req.params.number;
   i = i + 1;
   if(req.body.optradio){
       if(i <= questions.length) {
           answers.push(req.body.optradio);
       }
        if(i < questions.length){
-      res.render('quizquestions',{question:questions[i].question,options:questions[i].options});
+      res.render('quizquestions',{question:questions[i].question,options:questions[i].options,quizno:questions[i].quizno,experimentnumber:experimentnumber});
        } else {
            i=0;
            var score = 0;
@@ -86,7 +97,7 @@ router.post('/quiz/next',middleWare.isLoggedIn, (req,res,next)=>{
                 }
            } 
            wrong=questions.length-score;
-           res.render('scorequiz',{score:score,total:questions.length,wrong:wrong})
+           res.render('scorequiz',{score:score,total:questions.length,wrong:wrong,experimentnumber:experimentnumber})
        }
   } 
 });

@@ -1,7 +1,7 @@
 <%- include ('./partials/header') %>
 	<div>
 		<div>
-			<% if(currentUser.type=="teacher" ){ %>
+			<% if(currentUser.type=="Teacher" ){ %>
 				<!-- only show the assignment by this teacher -->
 				<form action="/assignment" method="POST" enctype="multipart/form-data">
 					<div>
@@ -40,41 +40,49 @@
 				</form>
 			<%}%>
 		</div>
-
+		<% if(currentUser.type=="Student" ){ %>
 		<div style="padding-top: 50px;"> 
-			<h1>Given Work</h1>
+			<h1>TO DO</h1>
 		</div>
+		<%}else{%>
+		<div style="padding-top: 50px;"> 
+			<h1>Assignment Assigned By You</h1>
+		</div>
+		<%}%>
 		<!-- i need to list only the assignments created by this teacher -->
 		<% items.forEach(function(assignment) { %>
-			<div class="w3-container w3-card w3-white w3-round w3-margin">
+			<div >
 				<br />
 
 				<hr class="w3-clear" />
 				<h4 style="color: red">
 					<%= assignment.topic %>(<%= assignment.subjectcode %>)
-					<%=assignment._id%>
+					
 				</h4>
 				<p style="color: green">
 					Max Marks Alloted :-<%= assignment.marks_alloted %>
 				</p>
 				<p style="color: green">Due Date :-<%= assignment.last_date %>
 				</p>
-				<!-- removing the embedd from here as it is forcing the browser to download again and again-->
-				<button type="button" class="w3-button w3-theme-d2 w3-margin-bottom">
+				
+			
+				<button  type="button" class="btn btn-primary" style="float:left; margin-right:40px;" >
 					<i class="fa fa-comment"></i> Comment
 				</button>
-
-				<button>
-					<form action="/download/<%= assignment._id %>" method="GET">
-						<input type="submit" value="Download" />
+                 
+					<form action="/download/<%= assignment._id %>" method="GET" >
+						<button  type="submit" class="btn btn-success"style="float:left; margin-right:40px;">Download</button>
+					
 					</form>
-				</button>
 			
-				<a href="/assignment/<%=assignment._id %>" class="w3-button w3-theme-d2 w3-margin-bottom">
-					View details
+				<a href="/assignment/<%=assignment._id %>" >
+					<button  type="button" class="btn btn-danger" style="float:left" >View details</button>
+					
 				</a>
-				<div></div>
+				
 			</div>
 			<% }) %>
 		</div>
-	<%- include ('./partials/footer') %>
+	
+	
+	

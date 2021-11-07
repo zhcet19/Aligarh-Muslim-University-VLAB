@@ -204,7 +204,7 @@ router.get("/simulation11", middleWare.isLoggedIn, function (req, res) {
 
 
 router.get('/assignment', middleWare.isLoggedIn, (req, res) => {
-    if (req.user.type == "teacher") {
+    if (req.user.type == "Teacher") {
         var ids = [];
         ids = req.user.assignments;
         assignmentModel.find().where('_id').in(ids).exec((err, items) => {
@@ -217,7 +217,7 @@ router.get('/assignment', middleWare.isLoggedIn, (req, res) => {
             }
         });
     }
-    else if (req.user.type == "student") {
+    else if (req.user.type == "Student") {
         assignmentModel.find({}, (err, items) => {
             if (err)
                 console.log(err)
@@ -230,13 +230,18 @@ router.get('/assignment', middleWare.isLoggedIn, (req, res) => {
 
 // Uploading the assignment by teacher
 router.post('/assignment', middleWare.isLoggedIn, upload.single('image'), (req, res, next) => {
+    
+
+
+
+
 
     var obj = {
         subjectcode: req.body.subjectcode,
         topic: req.body.topic,
         marks_alloted: req.body.marks_alloted,
         last_date: req.body.last_date,
-        img: 'uploads/teacher/' + req.file.filename,
+        img:'uploads/teacher/' + req.file.filename,
 
     }
 
@@ -266,8 +271,7 @@ router.get('/submitassignment', middleWare.isLoggedIn, (req, res) => {
             console.log(err);
         }
         else {
-            console.log("HIT!!");
-            // console.log(items);
+           
             res.render('submittedassignment', { items: items });
         }
     });
@@ -277,7 +281,10 @@ router.get('/submitassignment', middleWare.isLoggedIn, (req, res) => {
 // Route to submitt the assignment by student
 router.post('/submitassignment', middleWare.isLoggedIn, studentupload.single('image'), (req, res, next) => {
 
+
+
     var obj = {
+        topic:req.body.topic,
         name: req.body.name,
         enrollment_no: req.body.enrollment_no,
         img: 'uploads/students/' + req.file.filename,
@@ -312,19 +319,8 @@ router.get("/liveclass", middleWare.isLoggedIn, function (req, res) {
 
 
 
-// //Downloading the assignment
-// router.get('/download/:id',(req,res)=>{  
-//     assignmentModel.find({_id:req.params.id},(err,item)=>{  
-//         if(err){  
-//             console.log(err)  
-//         }   
-//         else{  
-//            var path= __dirname+'/public/'+item[0].img;  
-//            res.download(path);  
-//         }  
-//     });
 
-// });  
+
 
 
 // show assignment

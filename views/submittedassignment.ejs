@@ -1,11 +1,14 @@
 <%- include ('./partials/header') %>
 	<div>
 		<div>
-			<% if(currentUser.type=="teacher" ){ %>
+			<% if(currentUser.type=="Teacher" ){ %>
 				<% items.forEach(function(assignment) { %>
-                    <div class="w3-container w3-card w3-white w3-round w3-margin">
+                    <div >
                         <br />
                         <hr class="w3-clear" />
+                        <h2>
+                            <%=assignment.topic%>
+                        </h2>
                         <h4 style="color: red">
                             <%= assignment.name %>(<%= assignment.enrollment_no %>)
                         </h4>
@@ -13,10 +16,13 @@
                         </p>
                         <div class="w3-row-padding" style="margin: 0 -16px">
                             <div class="w3-half">
-                                <p>PREVIEW HERE!!!</p>
-                                <!-- <td>
-                                    <embed src="<%= assignment.img %>" width="100px" height="100px" />
-                                </td> -->
+                              
+                                <button>
+                                    <form action="/downloadsubmittedassignment/<%= assignment._id %>" method="GET">
+                                        <input type="submit" value="Download" />
+                                    </form>
+                                </button>
+                                
                             </div>
                         </div>
                         <div></div>
@@ -24,24 +30,26 @@
                     <% }) %>
 			<%} else {%>
 		</div>
-
+ 
 		<% items.forEach(function(assignment) { %>
             <% if(currentUser.username == assignment.name){ %>
                 <div class="w3-container w3-card w3-white w3-round w3-margin">
                     <br />
                     <hr class="w3-clear" />
-                    <h4 style="color: red">
-                        <%= assignment.name %>(<%= assignment.enrollment_no %>)
-                    </h4>
+                    <p style="color: red;">  
+                        Submitted by:- <%= assignment.name %>(<%= assignment.enrollment_no %>)
+                    </p>
                     <p style="color: green">Submitted on :-<%= assignment.created %>
                     </p>
                     <div class="w3-row-padding" style="margin: 0 -16px">
-                        <div class="w3-half">
-                            <p>PREVIEW HERE!!!</p>
-                            <!-- <td>
-                                <embed src="<%= assignment.img %>" width="100px" height="100px" />
-                            </td> -->
-                        </div>
+                        
+                         
+                                <form action="/downloadsubmittedassignment/<%= assignment._id %>" method="GET">
+                                    <button  type="submit" class="btn btn-primary" >Download</button>
+                                  
+                                </form>
+                           
+                        
                     </div>
                     <div></div>
                 </div> 

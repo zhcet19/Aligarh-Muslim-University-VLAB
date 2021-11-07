@@ -6,12 +6,12 @@
                 <h1> Topic Assessment</h1>
                 <form>
                     <div class="form-group buttonStart">
-                        <% if(currentUser.type=="teacher" ){ %>
-                            <a class="btn btn-primary" href="/addquiz"> Frame Quiz </a>
+                        <% if(currentUser.type=="Teacher" ){ %>
+                            <a class="btn btn-primary" href="/quiz/addquiz/<%=experimentnumber%>"> Frame Quiz </a>
 
-                            <a class="btn btn-primary" href="/quiz/questions" style="margin-top:10px"> View Submitted Quiz </a>
+                            <a class="btn btn-primary" href="/quiz/questions/<%=experimentnumber%>" style="margin-top:10px"> View Submitted Quiz </a>
                             <%} else {%>
-                                <a class="btn btn-primary" href="/quiz/questions"> Start Quiz </a>
+                                <a class="btn btn-primary" href="/quiz/questions/<%= experimentnumber %>"> Start Quiz </a>
                             <%}%>
                     </div>
                 </form>

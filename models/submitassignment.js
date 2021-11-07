@@ -1,7 +1,7 @@
 var mongoose = require('mongoose'); 
   
 var submitassignmentSchema = new mongoose.Schema({ 
-	
+	topic:String,
      name:String,
      enrollment_no:String,
      img:String ,

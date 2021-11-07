@@ -105,6 +105,19 @@ app.get('/download/:id', (req, res) => {
 
 });
 
+app.get('/downloadsubmittedassignment/:id',(req,res)=>{  
+  submitassignmentModel.find({_id:req.params.id},(err,item)=>{  
+     if(err){  
+          console.log(err)  
+      }   
+      else{  
+         var path= __dirname+'/public/'+item[0].img;  
+        res.download(path);  
+      }  
+  });
+
+});  
+
 app.get("/assignment/:id", function (req, res) {
   assignmentModel.findById(req.params.id, function (err, assignment) {
     if (err) {
