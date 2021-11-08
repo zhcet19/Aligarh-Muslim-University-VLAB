@@ -69,6 +69,13 @@
 						<input type="submit" value="Download" />
 					</form>
 				</button>
+
+				<button>
+					<form action="/delete/<%= assignment._id %>" method="GET">
+						<input type="submit" value="Delete" />
+					</form>
+				</button>
+				
 			
 				<a href="/assignment/<%=assignment._id %>" class="w3-button w3-theme-d2 w3-margin-bottom">
 					View details
