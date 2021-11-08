@@ -72,8 +72,15 @@
                  
 					<form action="/download/<%= assignment._id %>" method="GET" >
 						<button  type="submit" class="btn btn-success"style="float:left; margin-right:40px;">Download</button>
-					
 					</form>
+          
+				<button>
+					<form action="/delete/<%= assignment._id %>" method="GET">
+						<input type="submit" value="Delete" />
+					</form>
+				</button>
+				
+
 			
 				<a href="/assignment/<%=assignment._id %>" >
 					<button  type="button" class="btn btn-danger" style="float:left" >View details</button>
