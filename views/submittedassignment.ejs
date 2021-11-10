@@ -17,11 +17,11 @@
                         <div class="w3-row-padding" style="margin: 0 -16px">
                             <div class="w3-half">
                               
-                                <button>
+                               
                                     <form action="/downloadsubmittedassignment/<%= assignment._id %>" method="GET">
-                                        <input type="submit" value="Download" />
+                                        <button  type="submit"  class="btn btn-primary" style="margin-right:40px;">Download </button>
                                     </form>
-                                </button>
+                               
                                 
                             </div>
                         </div>
@@ -45,11 +45,16 @@
                         
                          
                                 <form action="/downloadsubmittedassignment/<%= assignment._id %>" method="GET">
-                                    <button  type="submit" class="btn btn-primary" >Download</button>
+                                    <button  type="submit" class="btn btn-primary" style="float:left; margin-right:40px;">Download</button>
                                   
                                 </form>
                            
-                        
+                            	
+                                    <form action="/submitassignment/<%=assignment._id %>?_method=DELETE"  method="POST">
+                                        <button type="submit" class="btn btn-danger" style=" margin-right:40px;">Delete</button>
+                                    </form>
+                               
+                                
                     </div>
                     <div></div>
                 </div> 

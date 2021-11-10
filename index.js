@@ -146,7 +146,16 @@ app.delete("/assignment/:id", function (req, res) {
   })
 
 });
+app.delete("/submitassignment/:id", function (req, res) {
+  submitassignmentModel.findByIdAndRemove(req.params.id, function (err) {
+    if (err) {
+      res.redirect("/submitassignment");
+    } else {
+      res.redirect("/submitassignment");
+    }
+  })
 
+});
 
 app.use(quizPage);
 mongoose.connection.on("connected", () => {

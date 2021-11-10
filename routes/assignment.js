@@ -236,6 +236,7 @@ router.post('/assignment', middleWare.isLoggedIn, upload.single('image'), (req, 
 
 
 
+    
     var obj = {
         subjectcode: req.body.subjectcode,
         topic: req.body.topic,
@@ -281,16 +282,15 @@ router.get('/submitassignment', middleWare.isLoggedIn, (req, res) => {
 // Route to submitt the assignment by student
 router.post('/submitassignment', middleWare.isLoggedIn, studentupload.single('image'), (req, res, next) => {
 
-
-
+    console.log(req.body.topic);
     var obj = {
-        topic:req.body.topic,
+     
         name: req.body.name,
         enrollment_no: req.body.enrollment_no,
         img: 'uploads/students/' + req.file.filename,
+        topic:req.body.topic,
     }
-    console.log(obj);
-
+    
     User.findById(req.user._id, function (err, user) {
         submitassignmentModel.create(obj, (err, item) => {
             if (err) {
@@ -305,6 +305,10 @@ router.post('/submitassignment', middleWare.isLoggedIn, studentupload.single('im
         });
     });
 });
+
+
+
+
 
 
 // MISLEneous

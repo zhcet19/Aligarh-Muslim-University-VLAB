@@ -3,37 +3,46 @@
 		<div>
 			<% if(currentUser.type=="Teacher" ){ %>
 				<!-- only show the assignment by this teacher -->
-				<form action="/assignment" method="POST" enctype="multipart/form-data">
-					<div>
-						<label for="subjectcode"><b style="color: red">Subject</b></label>
+				<form class="form-horizontal" action="/assignment" method="POST" enctype="multipart/form-data" >
+				    <div class="form-group">
+						<label for="subjectcode" class="col-sm-2 control-label"><b style="color: red">Subject</b></label>
+						<div class="col-sm-10">
 						<input type="text" id="subjectcode" placeholder="Enter Subject code" value="" name="subjectcode"
-							required style="margin-left: 20px; margin-bottom: 10px" />
+							required  class="form-control  ">
+							</div>
 					</div>
-					<div>
-						<label for="topic"><b style="color: red">Topic</b></label>
+					<div class="form-group">
+						<label for="topic" class="col-sm-2 control-label"><b style="color: red ">Topic</b></label>
+						<div class="col-sm-10">
 						<input type="text" id="topic" placeholder="Enter here" value="" name="topic" required
-							style="margin-left: 20px; margin-bottom: 10px" />
+							style=" margin-bottom: 10px" class="form-control  ">
+							</div>
 					</div>
-					<div>
-						<label for="marks_alloted"><b style="color: red">Enter the total marks</b></label>
-
+					<div class="form-group">
+						<label for="marks_alloted" class="col-sm-3 control-label"><b style="color: red">Enter the total marks</b></label>
+						<div class="col-sm-10">
 						<input type="number" id="marks_alloted" name="marks_alloted" value="" rows="4" cols="90"
 							placeholder="Write something here..." required
-							style="margin-left: 20px; margin-bottom: 10px" />
+							style=" margin-bottom: 10px" class="form-control  ">
+							</div>
 					</div>
-					<div>
-						<label for="last_date"><b style="color: red">Enter the due date </b></label>
+					<div class="form-group">
+						<label for="last_date" class="col-sm-3 control-label"><b style="color: red">Enter the due date </b></label>
+						<div class="col-sm-10">
 						<input type="date" id="last_date" placeholder="Enter here" value="" name="last_date" required
-							style="margin-left: 20px; margin-bottom: 10px" />
+							style=" margin-bottom: 10px" class="form-control  " />
+							</div>
 					</div>
 
-					<div>
-						<span><label for="image"><b style="color: red">Add Assignment</b></label>
-							<input type="file" id="image" name="image" value="" required />
+					<div class="form-group">
+						<span><label for="image"class="col-sm-3 control-label"><b style="color: red">Add Assignment</b></label>
+							<div class="col-sm-10">
+							<input type="file" id="image" name="image" value="" required class="form-control-file"  />
+							</div>
 						</span>
 					</div>
 					<div style="margin-left: 300px">
-						<button type="submit" class="w3-button w3-theme">
+						<button type="submit" class="btn btn-success">
 							Post Assignment
 						</button>
 					</div>
@@ -74,13 +83,7 @@
 						<button  type="submit" class="btn btn-success"style="float:left; margin-right:40px;">Download</button>
 					</form>
           
-				<button>
-					<form action="/delete/<%= assignment._id %>" method="GET">
-						<input type="submit" value="Delete" />
-					</form>
-				</button>
 				
-
 			
 				<a href="/assignment/<%=assignment._id %>" >
 					<button  type="button" class="btn btn-danger" style="float:left" >View details</button>
@@ -90,6 +93,9 @@
 			</div>
 			<% }) %>
 		</div>
-	
+		<div style="text-align: center; padding-top: 500px;" >
+			Copyright © 2021 Aligarh Muslim University Aligarh, India. </p>
+		   </div>
+		
 	
 	
