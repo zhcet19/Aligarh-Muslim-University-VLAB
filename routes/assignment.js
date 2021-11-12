@@ -306,6 +306,22 @@ router.post('/submitassignment', middleWare.isLoggedIn, studentupload.single('im
     });
 });
 
+// show assignment
+router.get("/submittedassignment/:id", middleWare.isLoggedIn,function(req, res) {
+
+    
+    
+    submitassignmentModel.findById(req.params.id, function (err,submittedassignment) {
+        if (err) {
+            res.redirect("/assignment");
+        } else {
+            console.log(submittedassignment);
+            res.render("submittedassignmentdetails",{submittedassignment:submittedassignment});
+        }
+    });
+
+    
+});
 
 
 
@@ -350,6 +366,10 @@ router.get("/assignment/:id", middleWare.isLoggedIn, async function (req, res) {
         }
     });
 });
+
+
+
+
 
 
 // submit work for this assignment

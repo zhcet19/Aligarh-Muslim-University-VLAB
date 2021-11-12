@@ -13,7 +13,7 @@
 				<li class="list-group-item"><%=item.name%>
 				<hr>
 				<%=item.created%>
-				<a href='<%=item.image%>'>View Work</a>
+				<a href='/submittedassignment/<%=item._id %>'>View Work</a>
 				</li>
 				
 				<br>
@@ -27,9 +27,9 @@
 		
 		</div>		
 	<div class="col-md-9">
-		<div class="thumbnail" >
+		<div class="thumbnail" style=" border:1px solid #000; width:350px;height:100px;" >
 			<img class="img-responsive" src="/<%= assignment.img %>" >
-	
+	     </div>
 			<div class="caption-full">
 				<h5>
 					<a><%=assignment.topic%></a> - <%=assignment. marks_alloted %> Points
@@ -55,31 +55,28 @@
 					Add Attachment
 				</h5>	 
 			<form method="POST" action="/assignment/<%=assignment._id%>/submit"  enctype="multipart/form-data"> 
-				<div> 
-					
-					<input  id="topic" name="topic" value='<%=assignment.topic%>' rows="4" cols="90" placeholder="Write something here..."  style="margin-left:20px;margin-bottom:10px; visibility: hidden;"> 	
-				</div>
-				<div> 
-					
-					<input  id="name" name="name" value='<%=currentUser.username%>' rows="4" cols="90" placeholder="Write something here..."  style="margin-left:20px;margin-bottom:10px; visibility: hidden;"> 	
-				</div>
-				<div> 
-					
-					<input  id="enrollment_no" name='enrollment_no' value='<%=currentUser.enroll%>' rows="4" cols="90" placeholder="Write something here..." style="margin-left:20px;margin-bottom:10px; visibility: hidden;" > 	
-				</div>
-     
-				<div><label for="image"><b >  Add my Assignment </b></label>            
-                         <input type="file" id="image" name="image" value="" required> 
+				
+				<div><label for="image">
+					<b >  Add my Assignment </b></label>            
+                         <input type="file" id="image" name="image" value="" required > 
 				</div>
 
 				<div >
 					<button type="submit" class="btn btn-primary">Mark as Done</button> 
 			   </div>
-                
-			   
-			  
-
-
+			   <div> 
+					
+				<input  id="topic" name="topic" value='<%=assignment.topic%>' rows="4" cols="90" placeholder="Write something here..."  style="margin-left:20px;margin-bottom:10px; visibility: hidden;"> 	
+			</div>
+			<div> 
+				
+				<input  id="name" name="name" value='<%=currentUser.username%>' rows="4" cols="90" placeholder="Write something here..."  style="margin-left:20px;margin-bottom:10px; visibility: hidden;"> 	
+			</div>
+			<div> 
+				
+				<input  id="enrollment_no" name='enrollment_no' value='<%=currentUser.enroll%>' rows="4" cols="90" placeholder="Write something here..." style="margin-left:20px;margin-bottom:10px; visibility: hidden;" > 	
+			</div>
+               
 		   </form>
 		   <%}%>
 		</div>

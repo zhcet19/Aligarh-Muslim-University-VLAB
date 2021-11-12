@@ -1,0 +1,18 @@
+<%- include ('./partials/header') %>
+<h2>
+   Submitted by <%=submittedassignment.name%>(<%=submittedassignment.enrollment_no%>)
+</h2>
+<p style="color: red">Submitted on :-<%= submittedassignment.created %>
+</p>
+
+    <img class="img-responsive" src="/<%= submittedassignment.img %>"  style=" max-width:100%;
+    max-height:100%; object-fit: cover; border:1px solid #000;">
+
+
+	
+<form action="/downloadsubmittedassignment/<%= submittedassignment._id %>" method="GET">
+    <button  type="submit" class="btn btn-primary" style="float:left; margin-right:40px; margin-top:10px">Download</button>
+  
+</form>
+
+<%- include ('./partials/footer') %>
