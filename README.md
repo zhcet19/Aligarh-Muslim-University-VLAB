@@ -62,7 +62,7 @@ Therfore we come up with an idea for our own university Vlab platform.
 * Run `npm install` to install dependencies.
 
 ## Run
-* Then visit http://localhost:2000 to access app
+* Then visit http://localhost:8000 to access app
 
 ## Test
 * Run server before test
