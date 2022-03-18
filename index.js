@@ -13,6 +13,7 @@ var express = require("express"),
   submitassignmentModel = require('./models/submitassignment'),
   quizModel = require('./models/quiz');
   flash = require("connect-flash");
+  const PORT = process.env.PORT || 8000;
 
 // auth imports
 var passport = require('passport');
@@ -163,7 +164,7 @@ mongoose.connection.on("connected", () => {
 });
 
 
-app.listen(8080, function () {
+app.listen(PORT, function () {
   console.log("Welcome you to AMUVLAB");
 });
 
